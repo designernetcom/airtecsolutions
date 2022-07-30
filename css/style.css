@@ -11199,7 +11199,7 @@ form .response .text-info{
 .main-footer .contact-list li{
   position: relative;
   padding-left: 70px;
-  margin-bottom: 22px;
+  margin-bottom: 7px;
 }
 
 .main-footer .contact-list li:last-child{
@@ -14852,7 +14852,7 @@ Sidebar Page Container
 }
 }
 
-/* .theme-btn1 .btn-title1 {
+.theme-btn1 .btn-title1 {
   position: relative;
   z-index: 9;
   color:black;
@@ -14873,7 +14873,7 @@ Sidebar Page Container
   display: inline-block;
   text-align: center;
   border-radius: 28px;
-} */
+}
 
 /* icon css*/
 
