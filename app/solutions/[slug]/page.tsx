@@ -487,6 +487,31 @@ export default async function SolutionPage({
                 </div>
               </div>
             </section>
+            <section className="modular-ot-gallery section-pad">
+              <div className="container">
+                <div className="modular-ot-gallery-heading">
+                  <div>
+                    <p className="eyebrow">THE MODULAR OT ENVIRONMENT</p>
+                    <h2>Built for <em>clarity, control and confidence.</em></h2>
+                  </div>
+                  <p>Explore the clean, coordinated spaces Airtec Solutions creates for modern surgical teams, from hygienic room finishes to integrated lighting, airflow and equipment planning.</p>
+                </div>
+                <div className="modular-ot-gallery-grid">
+                  <figure className="modular-ot-gallery-hero">
+                    <Image src="/solutions/modular-ot/hero.png" alt="Bright modular operation theatre with surgical lights and operating table" fill priority sizes="(max-width: 800px) 100vw, 66vw" />
+                    <figcaption><span>01</span> A controlled surgical environment, planned around the procedure.</figcaption>
+                  </figure>
+                  <figure>
+                    <Image src="/solutions/modular-ot/theatre-2.png" alt="Advanced modular operation theatre with surgical equipment and storage" fill sizes="(max-width: 800px) 100vw, 33vw" />
+                    <figcaption><span>02</span> Integrated equipment and storage for a smoother clinical workflow.</figcaption>
+                  </figure>
+                  <figure>
+                    <Image src="/solutions/modular-ot/theatre-3.png" alt="Modern modular operation theatre with blue flooring and ceiling filtration" fill sizes="(max-width: 800px) 100vw, 33vw" />
+                    <figcaption><span>03</span> Cleanable surfaces, airflow control and services in one coordinated room.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </section>
             <section className="modular-ot-profile section-pad">
               <div className="container modular-ot-profile-grid">
                 <div className="modular-ot-profile-copy">

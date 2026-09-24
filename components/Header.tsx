@@ -1,192 +1,112 @@
 "use client";
+
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import BrandLogo from "./BrandLogo";
-const solutionSlugs = [
-  "modular-operation-theater-manufacturer",
-  "modular-clean-room-system-manufacturer",
-  "cleanroom-panels-doors",
-  "hvac-hepa-filtration",
-  "laminar-airflow-systems",
-  "cleanroom-equipment",
-  "laminar-workstation-manufacturer",
-  "pressure-module-in-pune",
-  "aluminium-coving",
-  "clean-air-system-manufacturer",
-  "softwall-operation-theater",
-  "semi-modular-operation-theater-manufacturer",
-  "sterilized-operation-theater-manufacturer",
-  "prefabricated-operation-theater",
-  "seamless-operation-theater",
-  "stainless-steel-operation-theater",
-  "pu-wall-operation-theater",
-  "hardwall-operation-theater",
-  "single-operation-theater",
-];
-const solutionNames = [
-  "Modular Operation Theatre",
-  "Modular Cleanroom",
-  "Cleanroom Panels & Doors",
-  "HVAC & HEPA Filtration",
-  "Laminar Airflow Systems",
-  "Cleanroom Equipment",
-  "Laminar Flow Workstation",
-  "Positive Pressure Module",
-  "Aluminium Covings",
-  "Clean Air System / Air Shower",
-  "Softwall Operation Theater",
-  "Semi Modular Operation Theater",
-  "Sterilized Operation Theater Manufacturer",
-  "Prefabricated Operation Theater",
-  "Seamless Operation Theater",
-  "Stainless Steel Operation Theater",
-  "PU Wall Operation Theater",
-  "Hardwall Operation Theater",
-  "Operation Theater",
-];
-const operationSlugs = [
-  "modular-operation-theater-manufacturer",
-  "softwall-operation-theater",
-  "semi-modular-operation-theater-manufacturer",
-  "sterilized-operation-theater-manufacturer",
-  "prefabricated-operation-theater",
-  "seamless-operation-theater",
-  "stainless-steel-operation-theater",
-  "pu-wall-operation-theater",
-  "hardwall-operation-theater",
-  "single-operation-theater",
-];
-const operationNames = [
-  "Modular Operation Theatre",
-  "Softwall Operation Theater",
-  "Semi Modular Operation Theater",
-  "Sterilized Operation Theater",
-  "Prefabricated Operation Theater",
-  "Seamless Operation Theater",
-  "Stainless Steel Operation Theater",
-  "PU Wall Operation Theater",
-  "Hardwall Operation Theater",
-  "Operation Theater",
-];
-const productSlugs = [
-  "cleanroom-panels",
-  "hpl-puf-panels",
-  "hepa-filter",
-  "ahu",
-  "laminar-airflow",
-  "pass-box",
-  "air-shower",
-  "air-curtain",
-  "cleanroom-doors",
-  "cleanroom-windows",
-  "cleanroom-flooring",
-  "sampling-booth",
-  "dispensing-booth",
-  "ot-control-panel",
-  "ot-lights",
-];
-const nav = [
+
+const solutionPages = [
+  ["Modular Operation Theatre", "/solutions/modular-operation-theater-manufacturer"],
+  ["Modular Cleanroom", "/modular-clean-room"],
+  ["Hospital Cleanroom", "/solutions/hospital-cleanroom"],
+  ["Pharmaceutical Cleanroom", "/solutions/pharmaceutical-cleanroom"],
+  ["Medical Device Cleanroom", "/solutions/medical-device-cleanroom"],
+  ["Laboratory Cleanroom", "/solutions/laboratory-cleanroom"],
+] as const;
+
+const operationPages = [
+  ["Modular Operation Theater", "modular-operation-theater-manufacturer"],
+  ["Softwall Operation Theater", "softwall-operation-theater"],
+  ["Semi Modular Operation Theater", "semi-modular-operation-theater-manufacturer"],
+  ["Prefabricated Operation Theater", "prefabricated-operation-theater"],
+  ["Seamless Operation Theater", "seamless-operation-theater"],
+  ["Stainless Steel Operation Theater", "stainless-steel-operation-theater"],
+  ["PU Wall Operation Theater", "pu-wall-operation-theater"],
+  ["Hardwall Operation Theater", "hardwall-operation-theater"],
+] as const;
+
+const productPages = [
+  ["Cleanroom Panels", "cleanroom-panels"], ["HPL / PUF Panels", "hpl-puf-panels"],
+  ["HEPA Filter", "hepa-filter"], ["AHU", "ahu"], ["Laminar Airflow", "laminar-airflow"],
+  ["Positive Pressure Unit", "pressure-module-manufacturer"],
+  ["Pass Box", "pass-box"], ["Air Shower", "air-shower"], ["Air Curtain", "air-curtain"],
+  ["Cleanroom Doors", "cleanroom-doors"], ["Cleanroom Windows", "cleanroom-windows"],
+  ["Cleanroom Flooring", "cleanroom-flooring"], ["Sampling Booth", "sampling-booth"],
+  ["Dispensing Booth", "dispensing-booth"], ["OT Control Panel", "ot-control-panel"],
+  ["OT Lights", "ot-lights"],
+] as const;
+
+type NavItem = {
+  label: string;
+  href: string;
+  children?: readonly (readonly [string, string])[];
+};
+
+const nav: readonly NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Solutions", href: "/solutions", children: solutionNames },
-  { label: "Operation Theaters", href: "/solutions/operation-theater-manufacturer", children: operationNames },
-  {
-    label: "Products",
-    href: "/products",
-    children: [
-      "Cleanroom Panels",
-      "HPL / PUF Panels",
-      "HEPA Filter",
-      "AHU",
-      "Laminar Airflow",
-      "Pass Box",
-      "Air Shower",
-      "Air Curtain",
-      "Cleanroom Doors",
-      "Cleanroom Windows",
-      "Cleanroom Flooring",
-      "Sampling Booth",
-      "Dispensing Booth",
-      "OT Control Panel",
-      "OT Lights",
-    ],
-  },
-  {
-    label: "Industries",
-    href: "/industries",
-  
-  },
-//   { label: "Projects", href: "/#projects" },
-//   { label: "Quality", href: "/#quality" },
-//   { label: "Blog", href: "/#resources" },
+  { label: "Solutions", href: "/solutions", children: solutionPages },
+  { label: "Operation Theaters", href: "/solutions/modular-operation-theater-manufacturer", children: operationPages },
+  { label: "Products", href: "/products", children: productPages },
+  { label: "Industries", href: "/industries" },
   { label: "Contact", href: "/#contact" },
 ];
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
+
   return (
     <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
       <div className="container header-inner">
-        <a className="logo" href="/" aria-label="Airtec Solutions home">
-          <BrandLogo />
-        </a>
-        <button
-          className="menu-toggle"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen(!open)}
-        >
-          <span />
-          <span />
-          <span />
+        <Link className="logo" href="/" aria-label="Airtec Solutions home"><BrandLogo /></Link>
+        <button className="menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => { setOpen(!open); if (open) setMobileDropdown(null); }}>
+          <span /><span /><span />
         </button>
         <nav className={`main-nav ${open ? "open" : ""}`}>
           {nav.map((item) => (
-            <div className="nav-item" key={item.label}>
-              <a href={item.href} onClick={() => setOpen(false)}>
-                {item.label}
-                {item.children && <span className="chevron">⌄</span>}
-              </a>
-              {item.children && (
-                <div
-                    className={`dropdown ${item.label.toLowerCase().replace(/\s+/g, "-")}-dropdown`}
+            <div className={`nav-item ${mobileDropdown === item.label ? "mobile-dropdown-open" : ""}`} key={item.label}>
+                <Link
+                  href={item.href}
+                  className={mobileDropdown === item.label ? "mobile-dropdown-open" : ""}
+                  onClick={(event) => {
+                    if (item.children && window.matchMedia("(max-width: 800px)").matches) {
+                      event.preventDefault();
+                      setMobileDropdown((current) => current === item.label ? null : item.label);
+                      return;
+                    }
+                    setOpen(false);
+                    setMobileDropdown(null);
+                  }}
+                  aria-expanded={item.children ? mobileDropdown === item.label : undefined}
                 >
-                  {item.children.map((child, index) => (
-                    <a
-                      href={
-                        item.label === "Solutions"
-                          ? `/solutions/${solutionSlugs[index]}`
-                          : item.label === "Operation Theaters"
-                            ? `/solutions/${operationSlugs[index]}`
-                          : item.label === "Products"
-                            ? `/products/${productSlugs[index]}`
-                            : item.href
-                      }
-                      key={child}
-                    >
-                      {child}
-                      <b>↗</b>
-                    </a>
+                {item.label}{item.children && <span className="chevron">⌄</span>}
+              </Link>
+              {item.children && (
+                <div className={`dropdown ${item.label.toLowerCase().replace(/\s+/g, "-")}-dropdown`}>
+                  {item.children.map(([label, slug]) => (
+                    <div className="dropdown-item-wrapper" key={label}>
+                      <Link
+                        href={item.label === "Solutions" ? slug : item.label === "Operation Theaters" ? `/solutions/${slug}` : slug === "pressure-module-manufacturer" ? "/pressure-module-manufacturer" : `/products/${slug}`}
+                        onClick={() => { setOpen(false); setMobileDropdown(null); }}
+                      >
+                        {label}<b>↗</b>
+                      </Link>
+                    </div>
                   ))}
                 </div>
               )}
             </div>
           ))}
-          <div className="mobile-actions">
-            <a className="button button-dark" href="/#contact">
-              Request a Quote
-            </a>
-          </div>
+          <div className="mobile-actions"><Link className="button button-dark" href="/#contact">Request a Quote</Link></div>
         </nav>
-        <div className="header-actions">
-          <a className="header-quote" href="/#contact">
-            Request a Quote <b>↗</b>
-          </a>
-        </div>
+        <div className="header-actions"><Link className="header-quote" href="/#contact">Request a Quote <b>↗</b></Link></div>
       </div>
     </header>
   );

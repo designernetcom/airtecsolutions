@@ -39,7 +39,29 @@ const makeProduct = (
   category,
   description,
   intro,
-  image: productImages[(Number(number) - 1) % productImages.length],
+  image: slug === "air-shower"
+    ? "/products/air-shower.png"
+    : slug === "ahu"
+      ? "/products/ahu/hero.png"
+    : slug === "hpl-puf-panels"
+        ? "/products/hpl-puf-panels/hero.png"
+    : slug === "hepa-filter"
+      ? "/products/hepa-filter/hero.png"
+    : slug === "pass-box"
+      ? "/products/pass-box/hero.png"
+    : slug === "air-curtain"
+      ? "/products/air-curtain/hero.png"
+    : slug === "cleanroom-doors"
+      ? "/products/cleanroom-doors/hero.png"
+    : slug === "cleanroom-windows"
+      ? "/products/cleanroom-windows/hero.png"
+    : slug === "cleanroom-flooring"
+      ? "/products/cleanroom-flooring/hero.png"
+    : slug === "sampling-booth"
+      ? "/products/sampling-booth/hero.png"
+    : slug === "ot-lights"
+      ? "/products/ot-lights/hero.png"
+    : productImages[(Number(number) - 1) % productImages.length],
   features,
   applications,
   specification,
