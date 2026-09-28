@@ -43,27 +43,27 @@ const industries = [
   [
     "Pharmaceuticals",
     "Environmentally controlled manufacturing and compounding.",
-    "https://www.alfalaval.rs/globalassets/blocks/industries/biotech-and-pharmaceuticals/pharma/medical_ampoule_production_line_at_pharmaceutical-_factory.jpg",
+    "/solutions/modular-cleanroom/production-floor.png",
   ],
   [
     "Medical Devices",
     "Clean production environments for critical device assembly.",
-    "https://cdn.expresshealthcare.in/wp-content/uploads/2020/02/13142921/medical-devices.jpg",
+    "/solutions/modular-cleanroom/equipment.png",
   ],
   [
     "Biotechnology",
     "Precision environments for advanced biological research.",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReylZ_UORg6yEefapeqNGSnge7Rck8kPtSuGh5xYoiAuy_k7dqojApWYU&s=10",
+    "/solutions/modular-cleanroom/maintenance.png",
   ],
   [
     "Electronics",
     "Low-contamination spaces for sensitive production.",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCs9jgEZdK0Og1QBQWahzi4UejjwKkOlIFyXKEG-S9Pd9KIhHYYVU_NV0&s=10",
+    "/solutions/modular-cleanroom/corridor.png",
   ],
   [
     "Research & Laboratories",
     "Flexible, validated environments for discovery.",
-    "https://heisenbergindia.com/wp-content/uploads/2022/08/research-and-development.jpg",
+    "/solutions/modular-cleanroom/cleanroom-floor.png",
   ],
 ];
 const industryGroups = [
@@ -86,7 +86,7 @@ const featuredProjects = [
   ["Medical Device Cleanroom – India", "ISO Classified Environment | Modular Panels | HVAC", "/solutions/1 (4).png"],
 ];
 const technicalCapabilities = [
-  ["01", "Modular Construction", "PUF | PIR | HPL | PPGI | GI | SS 304"],
+  ["01", "Modular Cleanroom Systems", "PUF | PIR | HPL | PPGI | GI | SS304 — sourced and integrated according to project requirements"],
   ["02", "HVAC", "AHU | Fresh Air | Return Air | Exhaust | Pressure Control"],
   ["03", "Filtration", "Pre-Filters | Fine Filters | HEPA H13/H14"],
   ["04", "Airflow", "LAF | Unidirectional Airflow | Air Changes | Pressure Cascade"],
@@ -94,12 +94,31 @@ const technicalCapabilities = [
   ["06", "Documentation", "GA Drawings | Specifications | Test Reports | O&M Manuals"],
 ];
 const whyAirtec = [
-  ["01", "In-House Manufacturing", "Manufacturing capabilities for modular panels, doors and cleanroom components."],
+  ["01", "Manufacturing & Integration", "Selected cleanroom equipment and components are manufactured in-house, while specialized products and materials are sourced from established manufacturers and integrated into complete project solutions."],
   ["02", "Complete Turnkey Solutions", "From concept, design and manufacturing to installation and commissioning."],
   ["03", "Customized Engineering", "Solutions developed around room size, process requirements, airflow and environmental conditions."],
   ["04", "Integrated HVAC & Filtration", "AHU, HEPA, LAF and airflow systems can be coordinated as part of the project."],
   ["05", "Technical Documentation", "GA drawings, specifications, equipment datasheets, test reports and applicable project documentation."],
   ["06", "After-Sales Support", "Service and AMC support for applicable installations."],
+];
+const manufacturedProducts = [
+  "Laminar Air Flow",
+  "Pass Box",
+  "Air Shower",
+  "Cleanroom Doors",
+  "Cleanroom Windows",
+  "Sampling Booth",
+  "Dispensing Booth",
+];
+const suppliedProducts = [
+  "Cleanroom Panels",
+  "HPL / PUF Panels",
+  "HEPA Filters",
+  "AHU",
+  "Air Curtains",
+  "Cleanroom Flooring",
+  "OT Control Panels",
+  "OT Lights",
 ];
 function Intro({
   eyebrow,
@@ -144,10 +163,10 @@ export default function Home() {
               </div>
               <h1>
                 Modular OT &amp; Cleanroom Solutions
-                <span>Engineered, Manufactured &amp; Installed for Critical Environments</span>
+                <span>Engineered, Supplied, Manufactured &amp; Installed for Critical Environments</span>
               </h1>
               <p className="hero-copy">
-                Airtec Solutions designs, manufactures and installs{" "}
+                Airtec Solutions designs, sources, manufactures selected equipment and components, and installs{" "}
                 <strong>
                   Modular Operation Theatres, Modular Cleanrooms, HVAC &amp; HEPA
                   Filtration Systems and Clean Air Equipment
@@ -285,14 +304,15 @@ export default function Home() {
               provider specializing in{" "}
               <strong>
                 Modular Operation Theatres, Modular Cleanrooms, Clean Air
-                Systems and associated HVAC and filtration solutions.
+                Systems, cleanroom equipment and associated HVAC and filtration
+                solutions.
               </strong>
             </p>
             <p>
               We provide complete project solutions from{" "}
               <strong>
-                concept and design to manufacturing, installation, commissioning
-                and validation support.
+                concept and design to product manufacturing/sourcing, installation,
+                commissioning and validation support.
               </strong>
             </p>
             <p>
@@ -340,6 +360,31 @@ export default function Home() {
         <SolutionsSlider />
         <section className="about-technical-section section-pad" id="technical-capabilities"><div className="container"><div className="about-section-heading-row"><div><p className="eyebrow">TECHNICAL CAPABILITIES</p><h2>Built around <em>control.</em></h2></div><p>Our engineering scope brings the building envelope, air systems, filtration and project documentation together around each controlled environment.</p></div><div className="technical-capabilities-grid">{technicalCapabilities.map(([number, title, details]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{details}</p></div></article>)}</div></div></section>
         <section className="about-why-section section-pad" id="why-airtec"><div className="container"><div className="about-section-heading-row"><div><p className="eyebrow">WHY AIRTEC</p><h2>Why Choose <em>Airtec Solutions?</em></h2></div><p>A complete engineering partner for controlled environments, from the first project brief to ongoing support.</p></div><div className="about-reasons-grid">{whyAirtec.map(([number, title, copy]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div></div></section>
+        <section className="homepage-products-section section-pad" id="products-highlighted">
+          <div className="container">
+            <div className="about-section-heading-row">
+              <div>
+                <p className="eyebrow">PRODUCT CAPABILITIES</p>
+                <h2>Manufactured by <em>Airtec Solutions</em></h2>
+              </div>
+              <p>Selected cleanroom equipment is manufactured in-house, while specialized products and materials are supplied and integrated according to project requirements.</p>
+            </div>
+            <div className="homepage-product-groups">
+              <div className="homepage-product-group">
+                <h3>Manufactured by Airtec Solutions</h3>
+                <ol>
+                  {manufacturedProducts.map((product) => <li key={product}>{product}</li>)}
+                </ol>
+              </div>
+              <div className="homepage-product-group">
+                <h3>Products We Supply &amp; Integrate</h3>
+                <ol>
+                  {suppliedProducts.map((product) => <li key={product}>{product}</li>)}
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="projects-section featured-projects section-pad" id="projects">
           <div className="container">
             <div className="featured-projects-heading"><div><p className="eyebrow">SELECTED WORK / 03</p><h2>Featured <em>Projects</em></h2></div><div><p>Controlled environments delivered for healthcare, pharmaceutical and medical device applications.</p><a className="featured-projects-link" href="/#contact">View All Projects →</a></div></div>

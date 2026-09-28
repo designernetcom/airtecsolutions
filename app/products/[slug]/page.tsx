@@ -18,12 +18,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const product = getProduct((await params).slug);
   if (!product) notFound();
   const related = products.filter((item) => item.slug !== product.slug).slice((Number(product.number) % 12), (Number(product.number) % 12) + 3);
-  const jsonLd = { "@context": "https://schema.org", "@type": "Product", name: product.title, description: product.description, brand: { "@type": "Brand", name: "Airtec Solutions" }, category: product.category, manufacturer: { "@type": "Organization", name: "Airtec Solutions" } };
+  const jsonLd = { "@context": "https://schema.org", "@type": "Product", name: product.title, description: product.description, brand: { "@type": "Brand", name: "Airtec Solutions" }, category: product.category, offers: { "@type": "Offer", seller: { "@type": "Organization", name: "Airtec Solutions" } } };
   return <><Header /><main className="product-detail">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <section className="product-detail-hero"><Image src={product.image} alt={`${product.title} by Airtec Solutions`} fill priority sizes="100vw" /><div className="product-detail-shade" /><div className="container product-detail-hero-content">
       <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>{product.shortTitle}</span></nav>
-      <p className="eyebrow eyebrow-light">{product.category.toUpperCase()} / {product.number}</p><h1>{product.title}</h1><p>{product.description}</p>
+      <p className="eyebrow eyebrow-light">{product.category.toUpperCase()} / {product.number}</p><small className="product-status-badge product-status-badge-dark">{product.status}</small><h1>{product.title}</h1><p>{product.description}</p>
     </div></section>
     <section className="product-overview section-pad"><div className="container product-overview-grid"><div>
       <p className="eyebrow">DESIGNED AROUND YOUR REQUIREMENT</p><h2>Purposeful details. Reliable performance.</h2><p className="product-overview-lead">{product.intro}</p>

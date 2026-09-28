@@ -5,12 +5,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Clean Room Manufacturer in Maharashtra | Airtec Solutions",
+  title: "Clean Room Systems Supplier in Maharashtra | Airtec Solutions",
   description:
-    "Airtec Solutions is a clean room manufacturer in Maharashtra offering customized clean rooms, modular panels, HEPA filtration, laminar airflow systems, pass boxes, air showers, installation, and validation support.",
+    "Airtec Solutions supplies and integrates clean room systems in Maharashtra, including modular panels, HEPA filtration, laminar airflow systems, pass boxes, air showers, installation, and validation support.",
   alternates: { canonical: "/clean-room-manufacturer" },
   openGraph: {
-    title: "Clean Room Manufacturer in Maharashtra | Airtec Solutions",
+    title: "Clean Room Systems Supplier in Maharashtra | Airtec Solutions",
     description:
       "Customized clean rooms, modular panels, HEPA filtration, laminar airflow systems, pass boxes, air showers, installation, and validation support.",
     type: "website",
@@ -56,7 +56,7 @@ const faqs = [
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Clean Room Manufacturer in Maharashtra",
+  name: "Clean Room Systems Supplier in Maharashtra",
   description: metadata.description,
   provider: { "@type": "Organization", name: "Airtec Solutions" },
   areaServed: "Maharashtra, India",
@@ -75,7 +75,7 @@ export default function CleanRoomManufacturerPage() {
           <div className="container solution-detail-hero-content">
             <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Clean Room Manufacturer</span></nav>
             <p className="eyebrow eyebrow-light">AIRTEC CAPABILITY / CLEANROOMS</p>
-            <h1>Clean Room Manufacturer in Maharashtra</h1>
+            <h1>Clean Room Systems Supplier in Maharashtra</h1>
             <p>Engineered, manufactured and installed clean room systems for pharmaceutical, healthcare, research, electronics and other contamination-sensitive environments.</p>
           </div>
         </section>
@@ -116,7 +116,7 @@ export default function CleanRoomManufacturerPage() {
           <div className="container cleanroom-benefits-copy-grid"><div><p className="eyebrow">SAFETY BENEFITS</p><h2>Why a well-designed clean room <em>matters.</em></h2><p>A considered contamination-control strategy supports product quality, staff safety and reliable day-to-day operation across regulated environments.</p></div><ul>{safetyBenefits.map((benefit, index) => <li key={benefit}><b>{String(index + 1).padStart(2, "0")}</b>{benefit}</li>)}</ul></div>
         </section>
 
-        <section className="cleanroom-manufacturing section-pad"><div className="container cleanroom-manufacturing-grid"><div><p className="eyebrow eyebrow-light">OUR FACILITY</p><h2>Manufacturing capacity with <em>project-level control.</em></h2><p>As a hands-on clean room manufacturer, Airtec Solutions operates from a manufacturing facility in Bhosari, Pune. Our team supports the project lifecycle from design consultation and panel fabrication through installation, validation support, and after-sales maintenance.</p></div><ul><li><b>01</b>Clean room panels, doors, ceiling systems and airflow units for small laboratory clean rooms and large industrial projects</li><li><b>02</b>Design and manufacturing planned around the room size, process, cleanliness classification and operating conditions</li><li><b>03</b>Systems designed with ISO 14644 cleanroom classification principles in mind</li><li><b>04</b>Pharmaceutical environments planned with applicable cGMP guidelines in mind</li></ul></div></section>
+        <section className="cleanroom-manufacturing section-pad"><div className="container cleanroom-manufacturing-grid"><div><p className="eyebrow eyebrow-light">OUR PROJECT BASE</p><h2>Project coordination with <em>technical control.</em></h2><p>Airtec Solutions operates from Bhosari, Pune, and supports the project lifecycle from design consultation and panel sourcing through integration, installation, validation support, and after-sales maintenance.</p></div><ul><li><b>01</b>Clean room panels, doors, ceiling systems and airflow units sourced and integrated for small laboratory clean rooms and large industrial projects</li><li><b>02</b>Design and sourcing planned around the room size, process, cleanliness classification and operating conditions</li><li><b>03</b>Systems designed with ISO 14644 cleanroom classification principles in mind</li><li><b>04</b>Pharmaceutical environments planned with applicable cGMP guidelines in mind</li></ul></div></section>
 
         <section className="cleanroom-why section-pad"><div className="container cleanroom-why-grid"><div><p className="eyebrow eyebrow-light">WHY AIRTEC SOLUTIONS</p><h2>Your direct partner for <em>controlled environments.</em></h2><p>From Pune&apos;s industrial belt, we bring manufacturing accountability and end-to-end support to clean room projects across Maharashtra and India.</p></div><ul><li><b>01</b>15+ years of manufacturing experience in cleanroom and contamination-control equipment</li><li><b>02</b>In-house manufacturing facility in Bhosari, Pune, providing greater control over quality and project timelines</li><li><b>03</b>Complete customization of panel thickness, airflow class, room size and layout</li><li><b>04</b>End-to-end service: design, fabrication, installation, validation assistance and after-sales support</li><li><b>05</b>Manufacturer-direct pricing and accountability throughout the project</li></ul></div></section>
 

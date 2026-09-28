@@ -27,7 +27,6 @@ const operationPages = [
 const productPages = [
   ["Cleanroom Panels", "cleanroom-panels"], ["HPL / PUF Panels", "hpl-puf-panels"],
   ["HEPA Filter", "hepa-filter"], ["AHU", "ahu"], ["Laminar Airflow", "laminar-airflow"],
-  ["Positive Pressure Unit", "pressure-module-manufacturer"],
   ["Pass Box", "pass-box"], ["Air Shower", "air-shower"], ["Air Curtain", "air-curtain"],
   ["Cleanroom Doors", "cleanroom-doors"], ["Cleanroom Windows", "cleanroom-windows"],
   ["Cleanroom Flooring", "cleanroom-flooring"], ["Sampling Booth", "sampling-booth"],

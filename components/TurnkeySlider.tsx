@@ -2,7 +2,7 @@ const stages = [
   ["01", "Consultation", "We understand your process, performance requirements and project priorities before any design work begins."],
   ["02", "Site Assessment", "Our team studies the site, services, workflow and installation conditions to define a practical project brief."],
   ["03", "Engineering & Design", "Every detail is developed around airflow, hygiene, classification, pressure, temperature and operational needs."],
-  ["04", "Manufacturing", "Precision-built panels, systems and equipment are produced with consistency, quality and traceability."],
+  ["04", "Manufacturing & Integration", "Selected clean-air equipment and components are manufactured in-house; specialized products and materials are sourced and integrated to the project requirements."],
   ["05", "Installation", "Experienced teams bring the design to life with disciplined coordination and minimal site disruption."],
   ["06", "Testing & Commissioning", "Systems are tested, balanced and commissioned so the environment performs as engineered."],
   ["07", "Validation Support", "Clear documentation and validation support help your facility move confidently into operation."],

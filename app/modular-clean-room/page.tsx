@@ -5,12 +5,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Modular Clean Room Manufacturer in Maharashtra | Airtec Solutions",
+  title: "Modular Clean Room Systems in Maharashtra | Airtec Solutions",
   description:
-    "Airtec Solutions is a modular clean room manufacturer in Maharashtra offering engineered panels, controlled airflow, filtration, doors and turnkey cleanroom systems for pharma, healthcare, research and industry.",
+    "Airtec Solutions supplies and integrates modular cleanroom systems in Maharashtra, coordinating panels, controlled airflow, filtration, doors and related equipment for pharma, healthcare, research and industry.",
   alternates: { canonical: "/modular-clean-room" },
   openGraph: {
-    title: "Modular Clean Room Manufacturer in Maharashtra | Airtec Solutions",
+    title: "Modular Clean Room Systems in Maharashtra | Airtec Solutions",
     description:
       "Engineered modular cleanroom systems for pharmaceutical, healthcare, electronics, research and other controlled-environment applications.",
     type: "website",
@@ -50,8 +50,8 @@ const controls = [
   ["01", "Requirement analysis", "Understand the process, room use, cleanliness target, environmental conditions and available space."],
   ["02", "Site and layout planning", "Coordinate room dimensions, movement, access, services, equipment and future modification needs."],
   ["03", "Cleanroom design", "Develop the panel, airflow, filtration, pressure, door, flooring and service-integration strategy."],
-  ["04", "Panel fabrication", "Fabricate modular wall and ceiling elements selected around the project requirements."],
-  ["05", "Door and module fabrication", "Coordinate cleanroom doors, transfer equipment and pressure-control elements where applicable."],
+  ["04", "Panel sourcing & integration", "Source the selected modular wall and ceiling system from established manufacturers and integrate it around the project requirements."],
+  ["05", "Door and module integration", "Coordinate sourced cleanroom doors, transfer equipment and pressure-control elements where applicable."],
   ["06", "Filtration and HVAC integration", "Bring airflow, HEPA filtration, temperature, humidity and pressure considerations together as required."],
   ["07", "Installation", "Assemble the modular system at the project site with attention to interfaces and finish quality."],
   ["08", "Testing and inspection", "Carry out project-appropriate checks before handover and support documentation requirements."],
@@ -82,14 +82,14 @@ const specifications = [
 
 const whyAirtec = [
   "Since 2011, with more than a decade of experience in modular cleanroom and controlled-environment work.",
-  "Pune, Maharashtra manufacturing and service base for projects across Maharashtra and India.",
-  "In-house fabrication and project coordination, based on the company capabilities stated across the existing website.",
+  "Pune, Maharashtra project coordination and service base for projects across Maharashtra and India.",
+  "Selected equipment is manufactured in-house, while modular panels and specialized materials are sourced from established manufacturers and integrated into the project.",
   "Custom solutions for panel thickness, door dimensions, finishes, layout, pressure requirements, flooring and application needs.",
-  "End-to-end support across design, fabrication, installation, maintenance and project-specific handover requirements.",
+  "End-to-end support across design, sourcing, integration, installation, maintenance and project-specific handover requirements.",
 ];
 
 const faqs = [
-  ["Who is a modular clean room manufacturer in Maharashtra?", "Airtec Solutions is a Pune-based manufacturer and service provider for modular cleanrooms and related controlled-environment systems. The company supports design, fabrication, installation and associated cleanroom infrastructure for pharmaceutical, healthcare, research and industrial applications."],
+  ["Who supplies modular cleanroom systems in Maharashtra?", "Airtec Solutions is a Pune-based supplier and turnkey project partner for modular cleanrooms and related controlled-environment systems. The company supports design, sourcing, integration, installation and associated cleanroom infrastructure for pharmaceutical, healthcare, research and industrial applications."],
   ["What is the difference between a modular clean room and a conventional cleanroom?", "Modular refers primarily to the construction approach using prefabricated panels and components assembled at the project site. Both modular and conventional cleanrooms can be designed for controlled environments; the appropriate approach depends on the building, process, project constraints and required performance."],
   ["Which industries need a clean room?", "Pharmaceutical, healthcare, biotechnology, electronics, food and nutraceutical, diagnostic, research, cosmetics and other applications may require controlled contamination levels or environmental conditions. The design should be based on the process and applicable facility requirements."],
   ["What cleanroom classification standard is used in India?", "ISO 14644-1 is commonly used for airborne particulate cleanliness classification. The classification applies to measured airborne particulate cleanliness under specified conditions. Additional regulatory or facility requirements may apply depending on the industry and application."],
@@ -110,11 +110,11 @@ const relatedProducts = [
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Modular Clean Room Manufacturer",
+  name: "Modular Clean Room Systems",
   description: metadata.description,
   provider: { "@type": "Organization", name: "Airtec Solutions" },
   areaServed: "Maharashtra, India",
-  serviceType: "Modular cleanroom design, fabrication and installation",
+  serviceType: "Modular cleanroom design, sourcing, integration and installation",
 };
 
 export default function ModularCleanRoomPage() {
@@ -124,17 +124,17 @@ export default function ModularCleanRoomPage() {
       <main className="solution-detail" id="top">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
         <section className="solution-detail-hero">
-          <Image src="/solutions/1 (5).png" alt="Modular clean room system manufactured by Airtec Solutions" fill priority sizes="100vw" />
+          <Image src="/solutions/1 (5).png" alt="Modular clean room system supplied and integrated by Airtec Solutions" fill priority sizes="100vw" />
           <div className="solution-detail-shade" />
           <div className="container solution-detail-hero-content">
-            <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Modular Clean Room Manufacturer</span></nav>
+            <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Modular Clean Room Systems</span></nav>
             <p className="eyebrow eyebrow-light">AIRTEC CAPABILITY / CONTROLLED ENVIRONMENTS</p>
-            <h1>Modular Clean Room Manufacturer</h1>
-            <p>Airtec Solutions designs, manufactures and installs modular cleanroom systems for pharmaceutical, healthcare, electronics, research and other controlled-environment applications.</p>
+            <h1>Modular Clean Room Systems</h1>
+            <p>Airtec Solutions designs, sources, integrates and installs modular cleanroom systems for pharmaceutical, healthcare, electronics, research and other controlled-environment applications.</p>
           </div>
         </section>
 
-        <section className="cleanroom-intro section-pad"><div className="container cleanroom-intro-grid"><div><p className="eyebrow">MODULAR CLEANROOM ENGINEERING</p><h2>Controlled environments engineered for <em>your process.</em></h2></div><div><p>Airtec Solutions is a Modular Clean Room Manufacturer based in Pune, Maharashtra, supporting pharmaceutical, hospital, electronics, research, biotechnology, food, nutraceutical and diagnostic facilities.</p><p>Our work brings together cleanroom design, panel fabrication, installation and associated infrastructure so each project can be planned around its process, space, cleanliness requirements and operating needs.</p><p>Since 2011, Airtec Solutions has developed modular cleanroom systems and related cleanroom equipment for customers across Maharashtra and India.</p><Link className="button button-primary" href="/contact">Get a quote <b>↗</b></Link></div></div></section>
+        <section className="cleanroom-intro section-pad"><div className="container cleanroom-intro-grid"><div><p className="eyebrow">MODULAR CLEANROOM ENGINEERING</p><h2>Controlled environments engineered for <em>your process.</em></h2></div><div><p>Airtec Solutions is a Pune-based supplier and turnkey project partner for modular cleanroom systems, supporting pharmaceutical, hospital, electronics, research, biotechnology, food, nutraceutical and diagnostic facilities.</p><p>Our work brings together cleanroom design, panel sourcing, integration, installation and associated infrastructure so each project can be planned around its process, space, cleanliness requirements and operating needs.</p><p>Since 2011, Airtec Solutions has coordinated modular cleanroom systems and related cleanroom equipment for customers across Maharashtra and India.</p><Link className="button button-primary" href="/contact">Get a quote <b>↗</b></Link></div></div></section>
 
         <section className="modular-cleanroom-gallery section-pad">
           <div className="container">
@@ -170,7 +170,7 @@ export default function ModularCleanRoomPage() {
           </div>
         </section>
 
-        <section className="cleanroom-definition section-pad"><div className="container cleanroom-definition-grid"><div><p className="eyebrow">THE BASICS</p><h2>What Is a <em>Modular Clean Room?</em></h2></div><div><p>A modular cleanroom uses prefabricated wall and ceiling panels that are manufactured or fabricated and then assembled at the project site to create a controlled environment.</p><p>Depending on the system design, a cleanroom can support control of airborne particulate contamination, temperature, humidity, pressure and airflow. The final performance depends on the complete room design, including HVAC, filtration, construction, monitoring, operation and validation.</p><p>Compared with conventional civil construction, modular construction can simplify installation and future modification. Because major panel fabrication can be completed off-site, it can reduce on-site construction activity, installation time and associated disruption; it does not mean that installation creates no dust.</p><p>Depending on the panel and installation system, modular cleanrooms can offer greater flexibility for future modification, expansion or partial relocation than conventional civil construction.</p></div></div></section>
+        <section className="cleanroom-definition section-pad"><div className="container cleanroom-definition-grid"><div><p className="eyebrow">THE BASICS</p><h2>What Is a <em>Modular Clean Room?</em></h2></div><div><p>A modular cleanroom uses prefabricated wall and ceiling panels that are sourced from established manufacturers and assembled at the project site to create a controlled environment.</p><p>Depending on the system design, a cleanroom can support control of airborne particulate contamination, temperature, humidity, pressure and airflow. The final performance depends on the complete room design, including HVAC, filtration, construction, monitoring, operation and validation.</p><p>Compared with conventional civil construction, modular construction can simplify installation and future modification. Because panel preparation can be completed off-site, it can reduce on-site construction activity, installation time and associated disruption; it does not mean that installation creates no dust.</p><p>Depending on the panel and installation system, modular cleanrooms can offer greater flexibility for future modification, expansion or partial relocation than conventional civil construction.</p></div></div></section>
 
         <section className="cleanroom-industries section-pad"><div className="container"><p className="eyebrow eyebrow-light">APPLICATIONS &amp; INDUSTRIES</p><div className="cleanroom-applications-heading"><h2>Where modular cleanrooms <em>support critical work.</em></h2><p>Modular cleanrooms are used wherever contamination levels or environmental conditions need to be controlled around a process.</p></div><div className="cleanroom-industry-list">{applications.map((application, index) => <span key={application}><b>{String(index + 1).padStart(2, "0")}</b>{application}</span>)}</div></div></section>
 
@@ -184,9 +184,9 @@ export default function ModularCleanRoomPage() {
 
         <section className="cleanroom-benefits-copy section-pad"><div className="container cleanroom-benefits-copy-grid"><div><p className="eyebrow">BENEFITS</p><h2>Why choose a modular <em>cleanroom approach?</em></h2><p>A modular system can bring the controlled envelope, air systems and project coordination together around the needs of the facility.</p></div><ul>{benefits.map((benefit, index) => <li key={benefit}><b>{String(index + 1).padStart(2, "0")}</b>{benefit}</li>)}</ul></div></section>
 
-        <section className="cleanroom-why section-pad"><div className="container cleanroom-why-grid"><div><p className="eyebrow eyebrow-light">WHY AIRTEC SOLUTIONS</p><h2>Your modular cleanroom partner in <em>Maharashtra.</em></h2><p>Airtec Solutions brings Pune-based manufacturing and project coordination to controlled-environment work across Maharashtra and India.</p></div><ul>{whyAirtec.map((point, index) => <li key={point}><b>{String(index + 1).padStart(2, "0")}</b>{point}</li>)}</ul></div></section>
+        <section className="cleanroom-why section-pad"><div className="container cleanroom-why-grid"><div><p className="eyebrow eyebrow-light">WHY AIRTEC SOLUTIONS</p><h2>Your modular cleanroom partner in <em>Maharashtra.</em></h2><p>Airtec Solutions brings Pune-based project coordination, selected in-house equipment manufacturing and service support to controlled-environment work across Maharashtra and India.</p></div><ul>{whyAirtec.map((point, index) => <li key={point}><b>{String(index + 1).padStart(2, "0")}</b>{point}</li>)}</ul></div></section>
 
-        <section className="cleanroom-classification section-pad"><div className="container cleanroom-classification-grid"><div><p className="eyebrow eyebrow-light">MODULAR CLEAN ROOM MANUFACTURER</p><h2>Build the right environment for <em>the work it supports.</em></h2><p>Planning a pharmaceutical cleanroom, hospital cleanroom, research facility or controlled production area? Share your application, space and project requirements with Airtec Solutions for an engineering discussion and customized quotation.</p></div><div className="cleanroom-standard-list"><span>PROJECT CONSULTATION</span><p><b>01</b>Process, space and cleanliness requirements</p><p><b>02</b>Panel, airflow, filtration and access planning</p><p><b>03</b>Design, fabrication, installation and support</p><Link className="button button-light" href="/contact">Get a quote <b>↗</b></Link></div></div></section>
+        <section className="cleanroom-classification section-pad"><div className="container cleanroom-classification-grid"><div><p className="eyebrow eyebrow-light">MODULAR CLEANROOM SYSTEMS</p><h2>Build the right environment for <em>the work it supports.</em></h2><p>Planning a pharmaceutical cleanroom, hospital cleanroom, research facility or controlled production area? Share your application, space and project requirements with Airtec Solutions for an engineering discussion and customized quotation.</p></div><div className="cleanroom-standard-list"><span>PROJECT CONSULTATION</span><p><b>01</b>Process, space and cleanliness requirements</p><p><b>02</b>Panel, airflow, filtration and access planning</p><p><b>03</b>Design, sourcing, integration, installation and support</p><Link className="button button-light" href="/contact">Get a quote <b>↗</b></Link></div></div></section>
 
         <section className="cleanroom-faq section-pad"><div className="container"><div className="cleanroom-section-heading"><p className="eyebrow">FREQUENTLY ASKED QUESTIONS</p><h2>Clear answers before your <em>project begins.</em></h2></div><div className="cleanroom-faq-list">{faqs.map(([question, answer], index) => <details key={question}><summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<b>+</b></summary><p>{answer}</p></details>)}</div></div></section>
 

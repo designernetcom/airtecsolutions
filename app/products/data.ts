@@ -10,6 +10,7 @@ export type Product = {
   features: string[];
   applications: string[];
   specification: [string, string][];
+  status: "Manufactured by Airtec Solutions" | "Supplied & Integrated";
 };
 
 const productImages = [
@@ -62,13 +63,16 @@ const makeProduct = (
     : slug === "ot-lights"
       ? "/products/ot-lights/hero.png"
     : productImages[(Number(number) - 1) % productImages.length],
+  status: ["laminar-airflow", "pass-box", "air-shower", "cleanroom-doors", "cleanroom-windows", "sampling-booth", "dispensing-booth"].includes(slug)
+    ? "Manufactured by Airtec Solutions"
+    : "Supplied & Integrated",
   features,
   applications,
   specification,
 });
 
 export const products: Product[] = [
-  makeProduct("01", "cleanroom-panels", "Cleanroom Panels", "Modular Envelope Systems", "Seamless cleanroom wall and ceiling panels engineered for hygienic, durable controlled environments.", "Airtec cleanroom panels create a smooth, sealed envelope around your process. We coordinate panel layouts, service interfaces and finish details to support reliable hygiene and day-to-day maintenance.", ["Smooth, non-porous, cleanable surfaces", "Flush joints and sealed perimeter detailing", "Modular layout for efficient installation", "Service-ready coordination for clean spaces"], ["Pharmaceutical cleanrooms", "Hospitals and operation theatres", "Laboratories", "Medical device facilities"], [["Surface", "Pre-finished hygienic skin"], ["Configuration", "Wall and ceiling systems"], ["Finish", "Custom colour options"], ["Integration", "Doors, windows and services"]]),
+  makeProduct("01", "cleanroom-panels", "Cleanroom Panels", "Modular Envelope Systems", "Seamless cleanroom wall and ceiling panels selected for hygienic, durable controlled environments.", "We source cleanroom panels from established manufacturers and coordinate the panel layout, service interfaces and finish details to support reliable hygiene and day-to-day maintenance.", ["Smooth, non-porous, cleanable surfaces", "Flush joints and sealed perimeter detailing", "Modular layout for efficient installation", "Service-ready coordination for clean spaces"], ["Pharmaceutical cleanrooms", "Hospitals and operation theatres", "Laboratories", "Medical device facilities"], [["Surface", "Pre-finished hygienic skin"], ["Configuration", "Wall and ceiling systems"], ["Finish", "Custom colour options"], ["Integration", "Doors, windows and services"]]),
   makeProduct("02", "hpl-puf-panels", "HPL / PUF Panels", "Insulated Panel Systems", "High-pressure laminate and insulated PUF panel systems for robust, thermally efficient controlled spaces.", "Built for demanding interiors, our HPL and PUF panel systems pair durable finishes with practical insulation performance. The final configuration is selected around the room use, cleaning regime and environmental target.", ["Impact-resistant HPL finish options", "Insulated PUF core configurations", "Low-maintenance hygienic surfaces", "Modular details for fast site assembly"], ["Cleanroom envelopes", "Cold and temperature-controlled rooms", "Healthcare interiors", "Pharmaceutical production"], [["Facing", "HPL or coated metal options"], ["Core", "PUF insulated construction"], ["Assembly", "Modular tongue-and-groove system"], ["Use", "Walls, partitions and ceilings"]]),
   makeProduct("03", "hepa-filter", "HEPA Filter", "Air Filtration", "High-efficiency particulate air filtration for critical zones where clean, dependable airflow matters.", "Airtec HEPA filter solutions are specified as part of a practical airflow strategy, helping control airborne particulate in sensitive healthcare, laboratory and manufacturing areas.", ["High-efficiency particulate filtration", "Terminal and air-handling integration", "Options for ceiling-grid installations", "Accessible service and replacement planning"], ["Operation theatres", "Cleanrooms", "Laboratories", "Critical manufacturing areas"], [["Filtration", "HEPA-grade particulate control"], ["Installation", "Terminal or AHU integration"], ["Housing", "Cleanroom compatible options"], ["Support", "Selection and installation guidance"]]),
   makeProduct("04", "ahu", "Air Handling Unit", "HVAC Systems", "Engineered air handling units that support temperature, humidity, filtration and pressure-control strategies.", "An AHU is central to a controlled environment. Airtec helps configure air handling around required air changes, filtration stages, environmental stability and maintainable performance.", ["Application-led airflow and filtration design", "Temperature and humidity coordination", "Pressure-differential support", "Maintainability considered from the start"], ["Cleanrooms", "Hospitals and OT suites", "Pharmaceutical facilities", "Research laboratories"], [["Function", "Conditioned and filtered air supply"], ["Control", "Temperature, humidity and pressure support"], ["Filtration", "Multi-stage options including HEPA"], ["Configuration", "Project-specific sizing"]]),

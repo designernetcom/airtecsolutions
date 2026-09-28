@@ -482,6 +482,132 @@
   font-weight: 700
 }
 
+.footer-products-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+}
+
+.footer-products-columns > div {
+  display: grid;
+  align-content: start;
+}
+
+@media (max-width: 800px) {
+  .footer-products-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.homepage-products-section {
+  background: #edf5f5;
+}
+
+.homepage-products-section .about-section-heading-row {
+  margin-bottom: 42px;
+}
+
+/* Keep one Core Solutions module and one Turnkey Process module on the homepage. */
+.legacy-solutions-section,
+.legacy-process-section {
+  display: none !important;
+}
+
+.homepage-product-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.homepage-product-group {
+  padding: 30px;
+  border: 1px solid #bcdadd;
+  background: #fff;
+}
+
+.homepage-product-group h3 {
+  margin: 0 0 22px;
+  color: var(--navy);
+  font-size: clamp(20px, 2vw, 28px);
+  letter-spacing: -.04em;
+}
+
+.homepage-product-group ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: product;
+}
+
+.homepage-product-group li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid #d9e8e8;
+  color: var(--navy);
+  font-size: 14px;
+  counter-increment: product;
+}
+
+.homepage-product-group li::before {
+  content: counter(product, decimal-leading-zero);
+  color: #328f9c;
+  font: 500 10px "DM Mono", monospace;
+  letter-spacing: .08em;
+}
+
+.product-status-badge {
+  display: inline-block;
+  margin: 5px 0 8px;
+  padding: 5px 8px;
+  border: 1px solid #a8d8d6;
+  color: #287681;
+  font: 500 9px "DM Mono", monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.product-status-badge-dark {
+  border-color: #a7e9e7;
+  color: #b5f0e8;
+}
+
+/* Footer spacing and column balance */
+@media (min-width: 801px) {
+  .site-footer .footer-grid {
+    grid-template-columns: minmax(250px, 1.2fr) minmax(220px, 1fr) minmax(390px, 1.65fr) minmax(160px, .8fr);
+    gap: 42px;
+  }
+
+  .site-footer .footer-products-columns {
+    gap: 0 34px;
+  }
+
+  .site-footer .footer-products-columns a {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 700px) {
+  .homepage-product-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-product-group {
+    padding: 22px;
+  }
+
+  .homepage-product-group ol {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media(max-width:800px) {
   .footer-contact-inner {
     grid-template-columns: 1fr;
