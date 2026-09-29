@@ -102,6 +102,7 @@ const whyAirtec = [
   ["06", "After-Sales Support", "Service and AMC support for applicable installations."],
 ];
 const manufacturedProducts = [
+  "Modular Clean Rooms",
   "Laminar Air Flow",
   "Pass Box",
   "Air Shower",
@@ -199,7 +200,7 @@ export default function Home() {
               </div>
               <div className="engineering-card-bottom">
                 <b>
-                  Designed. Manufactured.
+                  Designed. Supplied. Manufactured.
                   <br />
                   Installed. Commissioned.
                 </b>
@@ -218,6 +219,8 @@ export default function Home() {
             </div>
             <div className="hero-sequence">
               <span>DESIGNED</span>
+              <i />
+                <span> SUPPLIED</span>
               <i />
               <span>MANUFACTURED</span>
               <i />
@@ -300,7 +303,7 @@ export default function Home() {
               title="Your Partner for Modular OT & Cleanroom Engineering"
             />
             <p className="about-lead">
-              Airtec Solutions is a Pune-based manufacturer and turnkey solution
+              Airtec Solutions is a Pune-based manufacturer, supplier and turnkey solution
               provider specializing in{" "}
               <strong>
                 Modular Operation Theatres, Modular Cleanrooms, Clean Air

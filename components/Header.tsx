@@ -25,6 +25,7 @@ const operationPages = [
 ] as const;
 
 const productPages = [
+  ["Modular Clean Room", "modular-clean-room"],
   ["Cleanroom Panels", "cleanroom-panels"], ["HPL / PUF Panels", "hpl-puf-panels"],
   ["HEPA Filter", "hepa-filter"], ["AHU", "ahu"], ["Laminar Airflow", "laminar-airflow"],
   ["Pass Box", "pass-box"], ["Air Shower", "air-shower"], ["Air Curtain", "air-curtain"],
@@ -47,7 +48,8 @@ const nav: readonly NavItem[] = [
   { label: "Operation Theaters", href: "/solutions/modular-operation-theater-manufacturer", children: operationPages },
   { label: "Products", href: "/products", children: productPages },
   { label: "Industries", href: "/industries" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Clients", href: "/clients" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -92,7 +94,7 @@ export default function Header() {
                   {item.children.map(([label, slug]) => (
                     <div className="dropdown-item-wrapper" key={label}>
                       <Link
-                        href={item.label === "Solutions" ? slug : item.label === "Operation Theaters" ? `/solutions/${slug}` : slug === "pressure-module-manufacturer" ? "/pressure-module-manufacturer" : `/products/${slug}`}
+                        href={item.label === "Solutions" ? slug : item.label === "Operation Theaters" ? `/solutions/${slug}` : slug === "pressure-module-manufacturer" ? "/pressure-module-manufacturer" : slug === "modular-clean-room" ? "/modular-clean-room" : `/products/${slug}`}
                         onClick={() => { setOpen(false); setMobileDropdown(null); }}
                       >
                         {label}<b>↗</b>

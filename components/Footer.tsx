@@ -11,7 +11,7 @@ const solutionItems = [
 ] as const;
 
 const productColumns = [
-  ["Cleanroom Panels", "HPL / PUF Panels", "HEPA Filters", "AHU", "Laminar Airflow", "Pass Box", "Air Shower", "Air Curtain"],
+  ["Modular Clean Room", "Cleanroom Panels", "HPL / PUF Panels", "HEPA Filters", "AHU", "Laminar Airflow", "Pass Box", "Air Shower", "Air Curtain"],
   ["Cleanroom Doors", "Cleanroom Windows", "Sampling Booth", "Dispensing Booth", "Cleanroom Flooring", "OT Control Panel", "OT Lights"],
 ] as const;
 
@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="footer-products-columns">
             {productColumns.map((items, index) => (
               <div key={index}>
-                {items.map((item) => <Link href="/products" key={item}>{item}</Link>)}
+                {items.map((item) => <Link href={item === "Modular Clean Room" ? "/modular-clean-room" : "/products"} key={item}>{item}</Link>)}
               </div>
             ))}
           </div>
