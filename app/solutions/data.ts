@@ -50,7 +50,7 @@ export const solutions: Solution[] = [
     title: "Hospital Cleanroom",
     shortTitle: "Hospital Cleanroom",
     description: "Hospital cleanroom environments designed for infection control, hygienic workflows and dependable clinical operations.",
-    image: "/solutions/1 (5).png",
+    image: "/solutions/hospital-cleanroom/hero.png",
     intro: "Airtec Solutions designs hospital cleanrooms around the needs of patient care, sterile procedures and clinical support. The room envelope, airflow, filtration, pressure relationships and finishes are coordinated to support a cleanable, maintainable healthcare environment.",
     benefits: ["Hygienic wall, ceiling and flooring solutions", "HVAC and HEPA filtration coordinated for the clinical space", "Pressure and airflow planning for infection control", "Design, installation and commissioning support"],
     applications: ["Procedure rooms", "CSSD and sterile stores", "ICU and isolation support areas", "Hospital laboratories"],

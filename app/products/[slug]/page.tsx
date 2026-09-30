@@ -29,6 +29,74 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <p className="eyebrow">DESIGNED AROUND YOUR REQUIREMENT</p><h2>Purposeful details. Reliable performance.</h2><p className="product-overview-lead">{product.intro}</p>
       <Link className="button button-primary" href="/#contact">Request a product consultation <b>↗</b></Link>
     </div><aside className="product-quick-spec"><span>PRODUCT AT A GLANCE</span>{product.specification.map(([key, value]) => <div key={key}><b>{key}</b><p>{value}</p></div>)}</aside></div></section>
+    {product.slug === "ot-control-panel" && (
+      <section className="ot-control-panel-feature section-pad">
+        <div className="container">
+          <div className="ot-control-panel-feature-heading">
+            <div>
+              <p className="eyebrow">OPERATION THEATRE CONTROL</p>
+              <h2>Every critical function in <em>clear view.</em></h2>
+            </div>
+            <p>A central control panel brings theatre lighting, HVAC, medical gases, alarms, access and room monitoring together in one accessible interface.</p>
+          </div>
+          <figure className="ot-control-panel-feature-figure">
+            <Image src="/products/ot-control-panel/hero.png" alt="Operation theatre control panel beside a modern surgical theatre" fill priority sizes="(max-width: 800px) 100vw, 100vw" />
+            <figcaption><span>01</span> Centralised monitoring and control designed around the surgical team and theatre workflow.</figcaption>
+          </figure>
+        </div>
+      </section>
+    )}
+    {product.slug === "dispensing-booth" && (
+      <section className="dispensing-booth-feature section-pad">
+        <div className="container">
+          <div className="dispensing-booth-feature-heading">
+            <div>
+              <p className="eyebrow">DISPENSING BOOTH SYSTEMS</p>
+              <h2>A cleaner zone for <em>confident dispensing.</em></h2>
+            </div>
+            <p>Localised clean-air protection, stainless-steel construction and practical operator access help support controlled powder and material dispensing workflows.</p>
+          </div>
+          <figure className="dispensing-booth-feature-figure">
+            <Image src="/products/dispensing-booth/hero.png" alt="Stainless-steel dispensing booth installed in a pharmaceutical cleanroom" fill priority sizes="(max-width: 800px) 100vw, 100vw" />
+            <figcaption><span>01</span> A contained dispensing work zone coordinated around airflow, materials and operator movement.</figcaption>
+          </figure>
+        </div>
+      </section>
+    )}
+    {product.slug === "laminar-airflow" && (
+      <section className="laminar-airflow-feature section-pad">
+        <div className="container">
+          <div className="laminar-airflow-feature-heading">
+            <div>
+              <p className="eyebrow">LAMINAR AIRFLOW SYSTEMS</p>
+              <h2>Focused clean air for <em>critical work.</em></h2>
+            </div>
+            <p>Unidirectional, HEPA-filtered airflow creates a controlled work zone for aseptic preparation, inspection, sampling and sensitive manufacturing processes.</p>
+          </div>
+          <figure className="laminar-airflow-feature-figure">
+            <Image src="/products/laminar-airflow/system-overview.png" alt="Cleanroom with laminar airflow workstations, air shower and pass boxes" fill priority sizes="(max-width: 800px) 100vw, 100vw" />
+            <figcaption><span>01</span> Laminar airflow equipment coordinated with cleanroom access, transfer and working zones.</figcaption>
+          </figure>
+        </div>
+      </section>
+    )}
+    {product.slug === "cleanroom-panels" && (
+      <section className="cleanroom-panels-feature section-pad">
+        <div className="container">
+          <div className="cleanroom-panels-feature-heading">
+            <div>
+              <p className="eyebrow">MODULAR CLEANROOM PANELS</p>
+              <h2>A hygienic envelope for <em>controlled work.</em></h2>
+            </div>
+            <p>Cleanroom wall and ceiling panels bring smooth surfaces, coordinated services and dependable access together around the way your facility operates.</p>
+          </div>
+          <figure className="cleanroom-panels-feature-figure">
+            <Image src="/products/cleanroom-panels/hero.png" alt="Bright modular cleanroom with hygienic wall and ceiling panels, blue doors and integrated air grilles" fill priority sizes="(max-width: 800px) 100vw, 100vw" />
+            <figcaption><span>01</span> Seamless wall and ceiling systems coordinated for clean, maintainable controlled environments.</figcaption>
+          </figure>
+        </div>
+      </section>
+    )}
     {product.slug === "air-shower" && (
       <section className="air-shower-gallery section-pad">
         <div className="container">

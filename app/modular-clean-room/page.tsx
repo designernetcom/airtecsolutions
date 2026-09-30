@@ -124,7 +124,7 @@ export default function ModularCleanRoomPage() {
       <main className="solution-detail" id="top">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
         <section className="solution-detail-hero">
-          <Image src="/solutions/1 (5).png" alt="Modular clean room system supplied and integrated by Airtec Solutions" fill priority sizes="100vw" />
+          <Image src="/solutions/modular-cleanroom/maintenance.png" alt="Technician maintaining ceiling services inside a modular cleanroom" fill priority sizes="100vw" />
           <div className="solution-detail-shade" />
           <div className="container solution-detail-hero-content">
             <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span aria-current="page">Modular Clean Room Systems</span></nav>

@@ -459,6 +459,23 @@ export default async function SolutionPage({
             </aside>
           </div>
         </section>
+        {solution.slug === "hospital-cleanroom" && (
+          <section className="hospital-cleanroom-feature section-pad">
+            <div className="container">
+              <div className="hospital-cleanroom-feature-heading">
+                <div>
+                  <p className="eyebrow">HOSPITAL CLEANROOM ENVIRONMENTS</p>
+                  <h2>Clinical spaces designed for <em>cleaner care.</em></h2>
+                </div>
+                <p>From hygienic corridors to fully equipped operating rooms, each hospital cleanroom is planned around infection control, clinical movement and dependable day-to-day operation.</p>
+              </div>
+              <figure className="hospital-cleanroom-feature-figure">
+                <Image src="/solutions/hospital-cleanroom/hero.png" alt="Hospital cleanroom corridor and operating theatre with hygienic surfaces and controlled airflow" fill priority sizes="(max-width: 800px) 100vw, 100vw" />
+                <figcaption><span>01</span> Integrated hospital cleanroom planning for patient care, sterile procedures and clinical support.</figcaption>
+              </figure>
+            </div>
+          </section>
+        )}
         {isOperationTheaterHub && (
           <>
             <section className="ot-page-intro section-pad"><div className="container ot-page-intro-grid"><div>{operationTheaterIntroduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div><div className="ot-page-image"><Image src="/solutions/1 (6).png" alt="Professional modular operation theater interior by Airtec Solutions" fill sizes="(max-width: 800px) 100vw, 48vw" /></div></div></section>

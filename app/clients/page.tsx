@@ -45,6 +45,29 @@ const hospitalClients = [
   "Vatsalya Hospital",
   "More Eye Hospital",
   "Sion Hospital",
+  "Sanskar Netrarugnalaya & Phaco Center",
+  "Sunetra Eye Hospital",
+  "Sudarshan Eye Hospital",
+  "Laxmi Eye Institute",
+  "Kosmoss Bones & Joints Center",
+  "C.K. Valvankar Eye Hospital",
+  "Awad Surgical Hospital",
+  "Chandrama Test Tube Baby Center",
+  "Astha General Hospital",
+  "Mahamrityunjai Hospital",
+  "Shri Balaji Hospital",
+  "Anand Hospital",
+  "Suditi Hospital",
+  "Deen Dayal Hospital",
+  "Rohit Prasad ENT Hospital",
+  "Manish Pungliyasai Hospital",
+  "Jankalyan Eye Hospital",
+  "Mahveer Hospital",
+  "Gandhi Nursing Home",
+  "Orange Multispeciality Hospital",
+  "Hernab Eye Hospital",
+  "Maa Vaishnoi Accident Hospital",
+  "Divya Jyoti Eye Hospital",
 ] as const;
 
 const industrialClients = [
@@ -56,6 +79,15 @@ const industrialClients = [
   "Larsen & Toubro Switchgear",
   "Chaitanya Enterprises",
   "Schneider Electric India Pvt. Ltd.",
+  "Saleri India Pvt Ltd",
+  "Vision Systems",
+  "Dnyano Projects Pvt Ltd",
+  "Ayush Enterprises",
+  "Dyna K Automotive Stampings Pvt Ltd",
+  "Precision Seals Mfg Pvt Ltd",
+  "Sankey Controls Pvt Ltd",
+  "Fluid Controls Ltd",
+  "Laxmi Opthalmic Services Pvt Ltd",
 ] as const;
 
 const pharmaceuticalClients = [
@@ -68,6 +100,10 @@ const pharmaceuticalClients = [
   "Staco Nutra Products Pvt. Ltd.",
   "Deccan Neutraceutical",
   "Emcure Pharmaceuticals",
+  "Prasad Meditech",
+  "Nigasavi Solutions LLP",
+  "Prasad Meditech LLP",
+  "VMG Industries LLP",
 ] as const;
 
 const researchClients = [
@@ -126,6 +162,76 @@ function ClientSection({
           {clients.map((client, index) => (
             <li className={styles.clientTile} key={client}>
               <span>{String(index + 1).padStart(2, "0")}</span>
+              {(
+                client === "District Civil Hospital" ||
+                client === "Sassoon Hospital" ||
+                client === "Global Eye Hospital" ||
+                client === "Sunetra Eye Hospital" ||
+                client === "Sudarshan Eye Hospital" ||
+                client === "Laxmi Eye Institute" ||
+                client === "Kosmoss Bones & Joints Center" ||
+                client === "C.K. Valvankar Eye Hospital" ||
+                client === "Shri Balaji Hospital" ||
+                client === "Mahamrityunjai Hospital" ||
+                client === "Anand Hospital" ||
+                client === "Tata Institute of Fundamental Research" ||
+                client === "Larsen & Toubro Electrical & Automation Pvt. Ltd." ||
+                client === "Finolex Cables Ltd." ||
+                client === "Finolex J Power System Pvt. Ltd." ||
+                client === "Unique Labels Pvt. Ltd." ||
+                client === "Larsen & Toubro Switchgear" ||
+                client === "Schneider Electric India Pvt. Ltd." ||
+                client === "Saleri India Pvt Ltd" ||
+                client === "Chaitanya Enterprises"
+              ) && (
+                <Image
+                  className={styles.clientLogo}
+                  src={
+                    client === "Sassoon Hospital"
+                      ? "/clients/sassoon-hospital-logo.jpeg"
+                      : client === "Global Eye Hospital"
+                        ? "/clients/global-eye-hospital-logo.png"
+                        : client === "Sunetra Eye Hospital"
+                          ? "/clients/sunetra-eye-hospital-logo.png"
+                          : client === "Sudarshan Eye Hospital"
+                            ? "/clients/sudarshan-eye-hospital-logo.jpeg"
+                            : client === "Laxmi Eye Institute"
+                              ? "/clients/laxmi-eye-institute-logo.png"
+                              : client === "Kosmoss Bones & Joints Center"
+                                ? "/clients/kosmoss-bones-joints-center-logo.png"
+                                : client === "C.K. Valvankar Eye Hospital"
+                                  ? "/clients/ck-valvankar-eye-hospital-logo.jpeg"
+                                  : client === "Shri Balaji Hospital"
+                                    ? "/clients/shri-balaji-hospital-logo.png"
+                                    : client === "Mahamrityunjai Hospital"
+                                      ? "/clients/mahamrityunjai-hospital-logo.jpeg"
+                                      : client === "Anand Hospital"
+                                        ? "/clients/anand-hospital-logo.png"
+                                        : client === "Tata Institute of Fundamental Research"
+                                          ? "/clients/tifr-logo.png"
+                                          : client === "Larsen & Toubro Electrical & Automation Pvt. Ltd."
+                                            ? "/clients/larsen-toubro-logo.png"
+                                            : client === "Finolex Cables Ltd."
+                                              ? "/clients/finolex-cables-logo.jpeg"
+                                              : client === "Finolex J Power System Pvt. Ltd."
+                                                ? "/clients/finolex-j-power-system-logo.jpg"
+                                                : client === "Unique Labels Pvt. Ltd."
+                                                  ? "/clients/unique-labels-logo.png"
+                                                  : client === "Larsen & Toubro Switchgear"
+                                                    ? "/clients/larsen-toubro-switchgear-logo.png"
+                                                    : client === "Schneider Electric India Pvt. Ltd."
+                                                      ? "/clients/schneider-electric-logo.png"
+                                                      : client === "Saleri India Pvt Ltd"
+                                                        ? "/clients/saleri-india-logo.jpeg"
+                                                        : client === "Chaitanya Enterprises"
+                                                          ? "/clients/chaitanya-enterprises-logo.jpeg"
+                                                          : "/clients/district-civil-hospital-logo.jpeg"
+                  }
+                  alt=""
+                  width={44}
+                  height={44}
+                />
+              )}
               <strong>{client}</strong>
             </li>
           ))}
@@ -217,9 +323,7 @@ export default function ClientsPage() {
               <div>
                 <p className={styles.eyebrow}>01 / OUR NETWORK</p>
                 <h2 id="network-title">
-                  Built around the work
-                  <br />
-                  <span>that matters.</span>
+                 Trusted by Leading Organizations
                 </h2>
               </div>
               <p>

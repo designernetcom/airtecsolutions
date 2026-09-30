@@ -11807,6 +11807,82 @@ button {
 .ahu-gallery-grid figcaption span { display: block; margin-bottom: 6px; color: #a7e9e7; font: 500 9px "DM Mono", monospace; letter-spacing: .12em; }
 @media (max-width: 800px) { .ahu-gallery-heading { display: block; } .ahu-gallery-heading > p { margin-top: 18px; } .ahu-gallery-grid { grid-template-columns: 1fr; } .ahu-gallery-grid figure { min-height: 320px; } }
 
+/* Hospital cleanroom feature image */
+.hospital-cleanroom-feature { overflow: hidden; background: #edf5f5; }
+.hospital-cleanroom-feature-heading { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 34px; }
+.hospital-cleanroom-feature-heading h2 { max-width: 650px; margin: 14px 0 0; color: var(--navy); font-size: clamp(32px, 3.7vw, 54px); line-height: 1; letter-spacing: -.06em; }
+.hospital-cleanroom-feature-heading h2 em { color: var(--blue); font-style: normal; }
+.hospital-cleanroom-feature-heading > p { max-width: 390px; margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.hospital-cleanroom-feature-figure { position: relative; min-height: min(62vw, 680px); margin: 0; overflow: hidden; background: #c9dfe0; }
+.hospital-cleanroom-feature-figure img { object-fit: cover; transition: transform .55s ease; }
+.hospital-cleanroom-feature-figure:hover img { transform: scale(1.02); }
+.hospital-cleanroom-feature-figure:after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 48%, #032b3dcc 100%); }
+.hospital-cleanroom-feature-figure figcaption { position: absolute; right: 22px; bottom: 20px; left: 22px; z-index: 1; color: #fff; font-size: 12px; line-height: 1.6; }
+.hospital-cleanroom-feature-figure figcaption span { display: block; margin-bottom: 6px; color: #a7e9e7; font: 500 9px "DM Mono", monospace; letter-spacing: .12em; }
+@media (max-width: 800px) { .hospital-cleanroom-feature-heading { display: block; } .hospital-cleanroom-feature-heading > p { margin-top: 18px; } .hospital-cleanroom-feature-figure { min-height: 360px; } }
+@media (max-width: 500px) { .hospital-cleanroom-feature-figure { min-height: 300px; } }
+
+/* Operation theatre control panel feature image */
+.ot-control-panel-feature { overflow: hidden; background: #edf5f5; }
+.ot-control-panel-feature-heading { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 34px; }
+.ot-control-panel-feature-heading h2 { max-width: 650px; margin: 14px 0 0; color: var(--navy); font-size: clamp(32px, 3.7vw, 54px); line-height: 1; letter-spacing: -.06em; }
+.ot-control-panel-feature-heading h2 em { color: var(--blue); font-style: normal; }
+.ot-control-panel-feature-heading > p { max-width: 390px; margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.ot-control-panel-feature-figure { position: relative; min-height: min(62vw, 680px); margin: 0; overflow: hidden; background: #c9dfe0; }
+.ot-control-panel-feature-figure img { object-fit: cover; transition: transform .55s ease; }
+.ot-control-panel-feature-figure:hover img { transform: scale(1.02); }
+.ot-control-panel-feature-figure:after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 48%, #032b3dcc 100%); }
+.ot-control-panel-feature-figure figcaption { position: absolute; right: 22px; bottom: 20px; left: 22px; z-index: 1; color: #fff; font-size: 12px; line-height: 1.6; }
+.ot-control-panel-feature-figure figcaption span { display: block; margin-bottom: 6px; color: #a7e9e7; font: 500 9px "DM Mono", monospace; letter-spacing: .12em; }
+@media (max-width: 800px) { .ot-control-panel-feature-heading { display: block; } .ot-control-panel-feature-heading > p { margin-top: 18px; } .ot-control-panel-feature-figure { min-height: 360px; } }
+@media (max-width: 500px) { .ot-control-panel-feature-figure { min-height: 300px; } }
+
+/* Dispensing booth feature image */
+.dispensing-booth-feature { overflow: hidden; background: #edf5f5; }
+.dispensing-booth-feature-heading { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 34px; }
+.dispensing-booth-feature-heading h2 { max-width: 650px; margin: 14px 0 0; color: var(--navy); font-size: clamp(32px, 3.7vw, 54px); line-height: 1; letter-spacing: -.06em; }
+.dispensing-booth-feature-heading h2 em { color: var(--blue); font-style: normal; }
+.dispensing-booth-feature-heading > p { max-width: 390px; margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.dispensing-booth-feature-figure { position: relative; min-height: min(62vw, 680px); margin: 0; overflow: hidden; background: #c9dfe0; }
+.dispensing-booth-feature-figure img { object-fit: cover; transition: transform .55s ease; }
+.dispensing-booth-feature-figure:hover img { transform: scale(1.02); }
+.dispensing-booth-feature-figure:after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 48%, #032b3dcc 100%); }
+.dispensing-booth-feature-figure figcaption { position: absolute; right: 22px; bottom: 20px; left: 22px; z-index: 1; color: #fff; font-size: 12px; line-height: 1.6; }
+.dispensing-booth-feature-figure figcaption span { display: block; margin-bottom: 6px; color: #a7e9e7; font: 500 9px "DM Mono", monospace; letter-spacing: .12em; }
+@media (max-width: 800px) { .dispensing-booth-feature-heading { display: block; } .dispensing-booth-feature-heading > p { margin-top: 18px; } .dispensing-booth-feature-figure { min-height: 360px; } }
+@media (max-width: 500px) { .dispensing-booth-feature-figure { min-height: 300px; } }
+
+/* Laminar airflow feature image */
+.laminar-airflow-feature { overflow: hidden; background: #edf5f5; }
+.laminar-airflow-feature-heading { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 34px; }
+.laminar-airflow-feature-heading h2 { max-width: 650px; margin: 14px 0 0; color: var(--navy); font-size: clamp(32px, 3.7vw, 54px); line-height: 1; letter-spacing: -.06em; }
+.laminar-airflow-feature-heading h2 em { color: var(--blue); font-style: normal; }
+.laminar-airflow-feature-heading > p { max-width: 390px; margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.laminar-airflow-feature-figure { position: relative; min-height: min(62vw, 680px); margin: 0; overflow: hidden; background: #c9dfe0; }
+.laminar-airflow-feature-figure img { object-fit: cover; transition: transform .55s ease; }
+.laminar-airflow-feature-figure:hover img { transform: scale(1.02); }
+.laminar-airflow-feature-figure:after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 48%, #032b3dcc 100%); }
+.laminar-airflow-feature-figure figcaption { position: absolute; right: 22px; bottom: 20px; left: 22px; z-index: 1; color: #fff; font-size: 12px; line-height: 1.6; }
+.laminar-airflow-feature-figure figcaption span { display: block; margin-bottom: 6px; color: #a7e9e7; font: 500 9px "DM Mono", monospace; letter-spacing: .12em; }
+
+@media (max-width: 800px) { .laminar-airflow-feature-heading { display: block; } .laminar-airflow-feature-heading > p { margin-top: 18px; } .laminar-airflow-feature-figure { min-height: 360px; } }
+@media (max-width: 500px) { .laminar-airflow-feature-figure { min-height: 300px; } }
+
+/* Cleanroom panels feature image */
+.cleanroom-panels-feature { overflow: hidden; background: #edf5f5; }
+.cleanroom-panels-feature-heading { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 34px; }
+.cleanroom-panels-feature-heading h2 { max-width: 650px; margin: 14px 0 0; color: var(--navy); font-size: clamp(32px, 3.7vw, 54px); line-height: 1; letter-spacing: -.06em; }
+.cleanroom-panels-feature-heading h2 em { color: var(--blue); font-style: normal; }
+.cleanroom-panels-feature-heading > p { max-width: 390px; margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.cleanroom-panels-feature-figure { position: relative; min-height: min(62vw, 680px); margin: 0; overflow: hidden; background: #c9dfe0; }
+.cleanroom-panels-feature-figure img { object-fit: cover; transition: transform .55s ease; }
+.cleanroom-panels-feature-figure:hover img { transform: scale(1.02); }
+.cleanroom-panels-feature-figure:after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, transparent 48%, #032b3dcc 100%); }
+.cleanroom-panels-feature-figure figcaption { position: absolute; right: 22px; bottom: 20px; left: 22px; z-index: 1; color: #fff; font-size: 12px; line-height: 1.6; }
+.cleanroom-panels-feature-figure figcaption span { display: block; margin-bottom: 6px; color: #a7e9e7; font: 500 9px "DM Mono", monospace; letter-spacing: .12em; }
+@media (max-width: 800px) { .cleanroom-panels-feature-heading { display: block; } .cleanroom-panels-feature-heading > p { margin-top: 18px; } .cleanroom-panels-feature-figure { min-height: 360px; } }
+@media (max-width: 500px) { .cleanroom-panels-feature-figure { min-height: 300px; } }
+
 /* HPL / PUF panel image gallery */
 .hpl-puf-gallery { overflow: hidden; background: #edf5f5; }
 .hpl-puf-gallery-heading { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 34px; }
