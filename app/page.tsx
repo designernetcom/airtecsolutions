@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SolutionsSlider from "@/components/SolutionsSlider";
 import TurnkeySlider from "@/components/TurnkeySlider";
+import TrustedClientsSlider from "@/components/TrustedClientsSlider";
 import Link from "next/link";
 
 const photos = {
@@ -85,6 +86,20 @@ const featuredProjects = [
   ["Pharmaceutical Cleanroom – Maharashtra", "Cleanroom | PUF/PIR Panels | AHU | HEPA | Validation Support", "/solutions/1 (5).png"],
   ["Medical Device Cleanroom – India", "ISO Classified Environment | Modular Panels | HVAC", "/solutions/1 (4).png"],
 ];
+const trustedClients = [
+  ["Chaitanya Enterprises", "/clients/homepage/chaitanya-enterprises.jpg"],
+  ["Government of Maharashtra", "/clients/homepage/maharashtra-government.jpg"],
+  ["Deen Dayal Upadhyay Hospital", "/clients/homepage/deen-dayal-upadhyay-hospital.jpg"],
+  ["Dyna-K", "/clients/homepage/dyna-k.jpg"],
+  ["Divya Jyoti Eye Hospital", "/clients/homepage/divya-jyoti-eye-hospital.jpg"],
+  ["Vision Systems", "/clients/homepage/vision-systems.jpg"],
+  ["Wintech Pharmaceuticals", "/clients/homepage/wintech-pharmaceuticals.jpg"],
+  ["Larsen & Toubro", "/clients/homepage/larsen-toubro.jpg"],
+  ["Schneider Electric", "/clients/homepage/schneider-electric.jpg"],
+  ["Surabhi Hospital", "/clients/homepage/surabhi-hospital.jpg"],
+  ["Vatsalya Hospital", "/clients/homepage/vatsalya-hospital.jpg"],
+  ["Venture Center", "/clients/homepage/venture-center.jpg"],
+] as const;
 const technicalCapabilities = [
   ["01", "Modular Cleanroom Systems", "PUF | PIR | HPL | PPGI | GI | SS304 — sourced and integrated according to project requirements"],
   ["02", "HVAC", "AHU | Fresh Air | Return Air | Exhaust | Pressure Control"],
@@ -390,7 +405,7 @@ export default function Home() {
         </section>
         <section className="projects-section featured-projects section-pad" id="projects">
           <div className="container">
-            <div className="featured-projects-heading"><div><p className="eyebrow">SELECTED WORK / 03</p><h2>Featured <em>Projects</em></h2></div><div><p>Controlled environments delivered for healthcare, pharmaceutical and medical device applications.</p><a className="featured-projects-link" href="/#contact">View All Projects →</a></div></div>
+            <div className="featured-projects-heading"><div><p className="eyebrow">SELECTED WORK / 03</p><h2>Featured <em>Projects</em></h2></div><div><p>Controlled environments delivered for healthcare, pharmaceutical and medical device applications.</p><Link className="featured-projects-link" href="/#contact">View All Projects →</Link></div></div>
             <div className="featured-projects-grid">{featuredProjects.map(([title, details, image]) => <article className="featured-project" key={title}><div className="featured-project-image"><Image src={image} alt={`${title} by Airtec Solutions`} fill sizes="(max-width: 700px) 100vw, 33vw" /></div><div className="featured-project-copy"><h3>{title}</h3><p>{details}</p><span>Airtec Solutions ↗</span></div></article>)}</div>
           </div>
         </section>
@@ -426,6 +441,21 @@ export default function Home() {
           </div>
         </section>
         <TurnkeySlider />
+        <section className="trusted-clients-section section-pad" id="trusted-clients">
+          <div className="container">
+            <div className="trusted-clients-heading">
+              <div>
+                <p className="eyebrow">TRUSTED PARTNERS / 04</p>
+                <h2>Trusted by <em>Leading Organizations</em></h2>
+              </div>
+              <div>
+                <p>Building long-term relationships with organizations across healthcare, pharmaceutical, medical device, industrial, research and other controlled-environment sectors.</p>
+                <Link className="trusted-clients-link" href="/clients">View All Clients <b>→</b></Link>
+              </div>
+            </div>
+            <TrustedClientsSlider clients={trustedClients} />
+          </div>
+        </section>
         <section className="legacy-process-section process-section section-pad">
           <div className="container">
             <Intro
@@ -474,6 +504,31 @@ export default function Home() {
         </section>
         {/* <section className="origin-cta-section section-pad"><div className="container"><p className="eyebrow eyebrow-light">AIRTEC SOLUTIONS / PAN INDIA</p><h2>Manufactured in Pune.<br /><em>Installed Across India.</em></h2><p>Planning a new OT or cleanroom? Share your requirement with our engineering team.</p><a className="button button-primary" href="/contact">Request a Technical &amp; Commercial Proposal <b>↗</b></a></div></section> */}
       
+        <section className="origin-cta-section section-pad" aria-labelledby="turnkey-solutions-title">
+          <div className="container turnkey-closing-grid">
+            <div className="turnkey-closing-copy">
+              <div className="turnkey-closing-index"><span>AIRTEC / TURNKEY</span><b>04</b></div>
+              <p className="eyebrow eyebrow-light">AIRTEC SOLUTIONS / TURNKEY</p>
+              <h2 id="turnkey-solutions-title">
+                Turnkey Solutions by <em>Airtec</em>
+              </h2>
+              <p className="turnkey-closing-lead">Engineered environments, delivered as one considered system.</p>
+            </div>
+            <div className="turnkey-closing-solutions" aria-label="Airtec turnkey solutions">
+              <div className="turnkey-closing-solution">
+                <span>01</span>
+                <strong>Modular Clean Rooms</strong>
+                <b>↗</b>
+              </div>
+              <div className="turnkey-closing-divider"><i /> <span>&amp;</span> <i /></div>
+              <div className="turnkey-closing-solution">
+                <span>02</span>
+                <strong>Modular Operation Theatres</strong>
+                <b>↗</b>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

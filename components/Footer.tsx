@@ -11,15 +11,33 @@ const solutionItems = [
 ] as const;
 
 const productColumns = [
-  ["Modular Clean Room", "Cleanroom Panels", "HPL / PUF Panels", "HEPA Filters", "AHU", "Laminar Airflow", "Pass Box", "Air Shower", "Air Curtain"],
-  ["Cleanroom Doors", "Cleanroom Windows", "Sampling Booth", "Dispensing Booth", "Cleanroom Flooring", "OT Control Panel", "OT Lights"],
+  [
+    ["Modular Clean Room", "/modular-clean-room"],
+    ["Cleanroom Panels", "/products/cleanroom-panels"],
+    ["HPL / PUF Panels", "/products/hpl-puf-panels"],
+    ["HEPA Filters", "/products/hepa-filter"],
+    ["AHU", "/products/ahu"],
+    ["Laminar Airflow", "/products/laminar-airflow"],
+    ["Pass Box", "/products/pass-box"],
+    ["Air Shower", "/products/air-shower"],
+    ["Air Curtain", "/products/air-curtain"],
+  ],
+  [
+    ["Cleanroom Doors", "/products/cleanroom-doors"],
+    ["Cleanroom Windows", "/products/cleanroom-windows"],
+    ["Sampling Booth", "/products/sampling-booth"],
+    ["Dispensing Booth", "/products/dispensing-booth"],
+    ["Cleanroom Flooring", "/products/cleanroom-flooring"],
+    ["OT Control Panel", "/products/ot-control-panel"],
+    ["OT Lights", "/products/ot-lights"],
+  ],
 ] as const;
 
 const companyItems = [
   ["About Us", "/about-us"],
-  ["Projects", "/#projects"],
-  ["Quality & Certifications", "/#quality"],
-  ["Blog", "/#resources"],
+  ["Clients", "/clients"],
+  ["Industries", "/industries"],
+  ["products", "/products"],
   ["Contact", "/contact"],
 ] as const;
 
@@ -40,7 +58,7 @@ export default function Footer() {
           <div className="footer-products-columns">
             {productColumns.map((items, index) => (
               <div key={index}>
-                {items.map((item) => <Link href={item === "Modular Clean Room" ? "/modular-clean-room" : "/products"} key={item}>{item}</Link>)}
+                {items.map(([label, href]) => <Link href={href} key={label}>{label}</Link>)}
               </div>
             ))}
           </div>
