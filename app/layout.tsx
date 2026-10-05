@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingContactActions from "@/components/FloatingContactActions";
 
 export const metadata: Metadata = {
   title: "Airtec Solutions | Modular OT & Cleanroom Solutions",
@@ -9,6 +10,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en"><body>{children}</body></html>
+    <html lang="en"><body>{children}<FloatingContactActions /></body></html>
   );
 }

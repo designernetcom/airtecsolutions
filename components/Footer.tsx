@@ -30,6 +30,7 @@ const productColumns = [
     ["Cleanroom Flooring", "/products/cleanroom-flooring"],
     ["OT Control Panel", "/products/ot-control-panel"],
     ["OT Lights", "/products/ot-lights"],
+    ["Pressure Module", "/solutions/pressure-module-in-pune"],
   ],
 ] as const;
 
@@ -38,6 +39,7 @@ const companyItems = [
   ["Clients", "/clients"],
   ["Industries", "/industries"],
   ["products", "/products"],
+  ["Maintenance & Support", "/maintenance-and-support"],
   ["Contact", "/contact"],
 ] as const;
 
@@ -68,7 +70,7 @@ export default function Footer() {
           {companyItems.map(([label, href]) => <Link href={href} key={label}>{label}</Link>)}
         </div>
       </div>
-      <div className="footer-contact-section">
+      <div className="footer-contact-section" id="contact">
         <div className="container footer-contact-inner">
           <div>
             <p className="eyebrow eyebrow-light">CONTACT AIRTEC SOLUTIONS</p>

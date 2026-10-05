@@ -32,7 +32,7 @@ const productPages = [
   ["Cleanroom Doors", "cleanroom-doors"], ["Cleanroom Windows", "cleanroom-windows"],
   ["Cleanroom Flooring", "cleanroom-flooring"], ["Sampling Booth", "sampling-booth"],
   ["Dispensing Booth", "dispensing-booth"], ["OT Control Panel", "ot-control-panel"],
-  ["OT Lights", "ot-lights"],
+  ["OT Lights", "ot-lights"], ["Pressure Module", "pressure-module-in-pune"],
 ] as const;
 
 type NavItem = {
@@ -94,7 +94,7 @@ export default function Header() {
                   {item.children.map(([label, slug]) => (
                     <div className="dropdown-item-wrapper" key={label}>
                       <Link
-                        href={item.label === "Solutions" ? slug : item.label === "Operation Theaters" ? `/solutions/${slug}` : slug === "pressure-module-manufacturer" ? "/pressure-module-manufacturer" : slug === "modular-clean-room" ? "/modular-clean-room" : `/products/${slug}`}
+                        href={item.label === "Solutions" ? slug : item.label === "Operation Theaters" ? `/solutions/${slug}` : slug === "pressure-module-in-pune" ? "/solutions/pressure-module-in-pune" : slug === "pressure-module-manufacturer" ? "/pressure-module-manufacturer" : slug === "modular-clean-room" ? "/modular-clean-room" : `/products/${slug}`}
                         onClick={() => { setOpen(false); setMobileDropdown(null); }}
                       >
                         {label}<b>↗</b>
@@ -105,9 +105,9 @@ export default function Header() {
               )}
             </div>
           ))}
-          <div className="mobile-actions"><Link className="button button-dark" href="/#contact">Request a Quote</Link></div>
+          <div className="mobile-actions"><Link className="button button-dark" href="/contact">Request a Quote</Link></div>
         </nav>
-        <div className="header-actions"><Link className="header-quote" href="/#contact">Request a Quote <b>↗</b></Link></div>
+        <div className="header-actions"><Link className="header-quote" href="/contact">Request a Quote <b>↗</b></Link></div>
       </div>
     </header>
   );

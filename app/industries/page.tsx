@@ -13,27 +13,51 @@ export const metadata: Metadata = {
 const industries = [
   [
     "01",
-    "PRIMARY",
-    "Healthcare",
+    "HEALTHCARE",
+    "Hospitals & Healthcare",
     "Modular Operation Theatres, hospital cleanrooms, procedure rooms and laminar airflow systems for hygienic patient-care environments.",
     "/solutions/1 (6).png",
     "/solutions/modular-operation-theater-manufacturer",
   ],
   [
     "02",
-    "SECONDARY",
-    "Pharmaceutical & Medical Devices",
-    "Controlled cleanrooms, sampling and dispensing areas, pass boxes and air showers for critical production processes.",
-    "/solutions/1 (5).png",
-    "/solutions/modular-clean-room-system-manufacturer",
+    "PHARMACEUTICAL",
+    "Pharmaceuticals",
+    "Environmentally controlled manufacturing and compounding spaces designed around cleanliness, airflow and process needs.",
+    "/solutions/modular-cleanroom/production-floor.png",
+    "/solutions/pharmaceutical-cleanroom",
   ],
   [
     "03",
-    "OTHER",
-    "Biotechnology, Electronics & Laboratories",
-    "Flexible controlled environments for research, sensitive production, assembly and advanced laboratory applications.",
-    "/solutions/1 (4).png",
+    "MEDICAL DEVICES",
+    "Medical Devices",
+    "Clean production environments for critical device assembly, inspection and contamination-sensitive manufacturing.",
+    "/solutions/modular-cleanroom/equipment.png",
+    "/solutions/medical-device-cleanroom",
+  ],
+  [
+    "04",
+    "BIOTECHNOLOGY",
+    "Biotechnology",
+    "Precision environments for advanced biological research, production and sensitive laboratory processes.",
+    "/solutions/modular-cleanroom/maintenance.png",
     "/solutions/modular-clean-room-system-manufacturer",
+  ],
+  [
+    "05",
+    "ELECTRONICS",
+    "Electronics",
+    "Low-contamination spaces for sensitive production, assembly and process control.",
+    "/solutions/modular-cleanroom/corridor.png",
+    "/solutions/modular-clean-room-system-manufacturer",
+  ],
+  [
+    "06",
+    "RESEARCH",
+    "Research & Laboratories",
+    "Flexible, validated environments for discovery, testing and controlled laboratory work.",
+    "/solutions/modular-cleanroom/cleanroom-floor.png",
+    "/solutions/laboratory-cleanroom",
   ],
 ];
 
@@ -71,7 +95,7 @@ export default function IndustriesPage() {
                 ([number, priority, title, copy, image, solution]) => (
                   <article
                     key={number}
-                    className={`industry-page-card industry-page-${priority.toLowerCase()}`}
+                    className={`industry-page-card industry-page-${priority.toLowerCase().replace(/\s+/g, "-")}`}
                   >
                     <div className="industry-page-image">
                       <Image

@@ -15,6 +15,7 @@ const photos = {
   industry: "/solutions/1 (5).png",
   lab: "/solutions/1 (6).png",
 };
+const modularOt360Url = "https://www.google.com/local/place/fid/0x3bd90faf16ee7f13:0x6b5bd731510e08dc/photosphere?iu=https://lh5.googleusercontent.com/p/AF1QipPLHpCDlLLY6yOjl3zKQ_6l8O4Bhg4nEpXybqP-%3Dw160-h106-k-no-pi-0-ya35.538036-ro-0-fo100&ik=CAoSLEFGMVFpcFBMSHBDRGxMTFk2eU9qbDN6S1FfNmw4TzRCaGc0bkVwWHlicVAt";
 const solutions = [
   [
     "01",
@@ -30,19 +31,43 @@ const solutions = [
     "/solutions/1 (5).png",
     "Explore Cleanrooms",
   ],
-  ["03", "Cleanroom Panels & Doors", "Engineered wall, ceiling, door and window systems for modular controlled environments.", "/solutions/1 (1).png", "View Panel Systems"],
-  ["04", "HVAC & HEPA Filtration", "Air handling, filtration and airflow solutions designed around required environmental conditions.", "/solutions/1 (4).png", "Explore HVAC & Filtration"],
-  ["05", "Laminar Airflow Systems", "Unidirectional airflow solutions for applications requiring controlled clean air.", "/solutions/1 (3).png", "Explore LAF"],
-  ["06", "Cleanroom Equipment", "Pass Boxes, Air Showers, Sampling Booths, Dispensing Booths and other clean-air equipment.", "/solutions/1 (2).png", "View Products"],
+  [
+    "03",
+    "Cleanroom Panels & Doors",
+    "Engineered wall, ceiling, door and window systems for modular controlled environments.",
+    "/solutions/1 (1).png",
+    "View Panel Systems",
+  ],
+  [
+    "04",
+    "HVAC & HEPA Filtration",
+    "Air handling, filtration and airflow solutions designed around required environmental conditions.",
+    "/solutions/1 (4).png",
+    "Explore HVAC & Filtration",
+  ],
+  [
+    "05",
+    "Laminar Airflow Systems",
+    "Unidirectional airflow solutions for applications requiring controlled clean air.",
+    "/solutions/1 (3).png",
+    "Explore LAF",
+  ],
+  [
+    "06",
+    "Cleanroom Equipment",
+    "Pass Boxes, Air Showers, Sampling Booths, Dispensing Booths and other clean-air equipment.",
+    "/solutions/1 (2).png",
+    "View Products",
+  ],
 ];
 const industries = [
   [
-    "Hospitals & Healthcare",
+    "Healthcare",
     "Hygienic, controlled spaces for modern patient care.",
     "/solutions/1 (6).png",
   ],
   [
-    "Pharmaceuticals",
+    "Pharmaceutical",
     "Environmentally controlled manufacturing and compounding.",
     "/solutions/modular-cleanroom/production-floor.png",
   ],
@@ -62,15 +87,10 @@ const industries = [
     "/solutions/modular-cleanroom/corridor.png",
   ],
   [
-    "Research & Laboratories",
+    "Research",
     "Flexible, validated environments for discovery.",
     "/solutions/modular-cleanroom/cleanroom-floor.png",
   ],
-];
-const industryGroups = [
-  ["PRIMARY", "Healthcare", "Modular OT | Hospital Cleanroom | Procedure Room | LAF", "/solutions/1 (6).png"],
-  ["SECONDARY", "Pharmaceutical & Medical Devices", "Cleanrooms | Sampling | Dispensing | Pass Boxes | Air Showers", "/solutions/1 (5).png"],
-  ["OTHER", "Biotechnology / Electronics / Laboratories", "Controlled environments for research, sensitive production and advanced applications.", "/solutions/1 (4).png"],
 ];
 const workflow = [
   "Consultation",
@@ -82,16 +102,39 @@ const workflow = [
   "Validation Support",
 ];
 const featuredProjects = [
-  ["Modular Operation Theatre – Pune", "Hospital | Modular OT | HVAC | HEPA | LAF", "/solutions/1 (6).png"],
-  ["Pharmaceutical Cleanroom – Maharashtra", "Cleanroom | PUF/PIR Panels | AHU | HEPA | Validation Support", "/solutions/1 (5).png"],
-  ["Medical Device Cleanroom – India", "ISO Classified Environment | Modular Panels | HVAC", "/solutions/1 (4).png"],
+  [
+    "Modular Operation Theatre – Pune",
+    "Hospital | Modular OT | HVAC | HEPA | LAF",
+    "/solutions/1 (6).png",
+  ],
+  [
+    "Pharmaceutical Cleanroom – Maharashtra",
+    "Cleanroom | PUF/PIR Panels | AHU | HEPA | Validation Support",
+    "/solutions/1 (5).png",
+  ],
+  [
+    "Medical Device Cleanroom – India",
+    "ISO Classified Environment | Modular Panels | HVAC",
+    "/solutions/1 (4).png",
+  ],
+];
+const featuredProjectSlugs = [
+  "modular-operation-theater-manufacturer",
+  "modular-clean-room-system-manufacturer",
+  "medical-device-cleanroom",
 ];
 const trustedClients = [
   ["Chaitanya Enterprises", "/clients/homepage/chaitanya-enterprises.jpg"],
   ["Government of Maharashtra", "/clients/homepage/maharashtra-government.jpg"],
-  ["Deen Dayal Upadhyay Hospital", "/clients/homepage/deen-dayal-upadhyay-hospital.jpg"],
+  [
+    "Deen Dayal Upadhyay Hospital",
+    "/clients/homepage/deen-dayal-upadhyay-hospital.jpg",
+  ],
   ["Dyna-K", "/clients/homepage/dyna-k.jpg"],
-  ["Divya Jyoti Eye Hospital", "/clients/homepage/divya-jyoti-eye-hospital.jpg"],
+  [
+    "Divya Jyoti Eye Hospital",
+    "/clients/homepage/divya-jyoti-eye-hospital.jpg",
+  ],
   ["Vision Systems", "/clients/homepage/vision-systems.jpg"],
   ["Wintech Pharmaceuticals", "/clients/homepage/wintech-pharmaceuticals.jpg"],
   ["Larsen & Toubro", "/clients/homepage/larsen-toubro.jpg"],
@@ -100,21 +143,70 @@ const trustedClients = [
   ["Vatsalya Hospital", "/clients/homepage/vatsalya-hospital.jpg"],
   ["Venture Center", "/clients/homepage/venture-center.jpg"],
 ] as const;
+
+const solutionSlugs = [
+  "modular-operation-theater-manufacturer",
+  "modular-clean-room-system-manufacturer",
+  "cleanroom-panels-doors",
+  "hvac-hepa-filtration",
+  "laminar-airflow-systems",
+  "cleanroom-equipment",
+] as const;
 const technicalCapabilities = [
-  ["01", "Modular Cleanroom Systems", "PUF | PIR | HPL | PPGI | GI | SS304 — sourced and integrated according to project requirements"],
+  [
+    "01",
+    "Modular Cleanroom Systems",
+    "PUF | PIR | HPL | PPGI | GI | SS304 — sourced and integrated according to project requirements",
+  ],
   ["02", "HVAC", "AHU | Fresh Air | Return Air | Exhaust | Pressure Control"],
   ["03", "Filtration", "Pre-Filters | Fine Filters | HEPA H13/H14"],
-  ["04", "Airflow", "LAF | Unidirectional Airflow | Air Changes | Pressure Cascade"],
-  ["05", "Controlled Environment", "Temperature | Humidity | Differential Pressure | Cleanliness"],
-  ["06", "Documentation", "GA Drawings | Specifications | Test Reports | O&M Manuals"],
+  [
+    "04",
+    "Airflow",
+    "LAF | Unidirectional Airflow | Air Changes | Pressure Cascade",
+  ],
+  [
+    "05",
+    "Controlled Environment",
+    "Temperature | Humidity | Differential Pressure | Cleanliness",
+  ],
+  [
+    "06",
+    "Documentation",
+    "GA Drawings | Specifications | Test Reports | O&M Manuals",
+  ],
 ];
 const whyAirtec = [
-  ["01", "Manufacturing & Integration", "Selected cleanroom equipment and components are manufactured in-house, while specialized products and materials are sourced from established manufacturers and integrated into complete project solutions."],
-  ["02", "Complete Turnkey Solutions", "From concept, design and manufacturing to installation and commissioning."],
-  ["03", "Customized Engineering", "Solutions developed around room size, process requirements, airflow and environmental conditions."],
-  ["04", "Integrated HVAC & Filtration", "AHU, HEPA, LAF and airflow systems can be coordinated as part of the project."],
-  ["05", "Technical Documentation", "GA drawings, specifications, equipment datasheets, test reports and applicable project documentation."],
-  ["06", "After-Sales Support", "Service and AMC support for applicable installations."],
+  [
+    "01",
+    "Manufacturing & Integration",
+    "Selected cleanroom equipment and components are manufactured in-house, while specialized products and materials are sourced from established manufacturers and integrated into complete project solutions.",
+  ],
+  [
+    "02",
+    "Complete Turnkey Solutions",
+    "From concept, design and manufacturing to installation and commissioning.",
+  ],
+  [
+    "03",
+    "Customized Engineering",
+    "Solutions developed around room size, process requirements, airflow and environmental conditions.",
+  ],
+  [
+    "04",
+    "Integrated HVAC & Filtration",
+    "AHU, HEPA, LAF and airflow systems can be coordinated as part of the project.",
+  ],
+  [
+    "05",
+    "Technical Documentation",
+    "GA drawings, specifications, equipment datasheets, test reports and applicable project documentation.",
+  ],
+  [
+    "06",
+    "After-Sales Support",
+    "Service and AMC support for applicable installations.",
+  ],
 ];
 const manufacturedProducts = [
   "Modular Clean Rooms",
@@ -179,13 +271,17 @@ export default function Home() {
               </div>
               <h1>
                 Modular OT &amp; Cleanroom Solutions
-                <span>Engineered, Supplied, Manufactured &amp; Installed for Critical Environments</span>
+                <span>
+                  Engineered, Supplied, Manufactured &amp; Installed for
+                  Critical Environments
+                </span>
               </h1>
               <p className="hero-copy">
-                Airtec Solutions designs, sources, manufactures selected equipment and components, and installs{" "}
+                Airtec Solutions designs, sources, manufactures selected
+                equipment and components, and installs{" "}
                 <strong>
-                  Modular Operation Theatres, Modular Cleanrooms, HVAC &amp; HEPA
-                  Filtration Systems and Clean Air Equipment
+                  Modular Operation Theatres, Modular Cleanrooms, HVAC &amp;
+                  HEPA Filtration Systems and Clean Air Equipment
                 </strong>{" "}
                 for healthcare and critical industries.
               </p>
@@ -219,7 +315,9 @@ export default function Home() {
                   <br />
                   Installed. Commissioned.
                 </b>
-                <small>Validation Support Available as per Project Requirements</small>
+                <small>
+                  Validation Support Available as per Project Requirements
+                </small>
                 <small>
                   Concept → Design → Manufacturing → Installation →
                   Commissioning → Validation
@@ -235,7 +333,7 @@ export default function Home() {
             <div className="hero-sequence">
               <span>DESIGNED</span>
               <i />
-                <span> SUPPLIED</span>
+              <span> SUPPLIED</span>
               <i />
               <span>MANUFACTURED</span>
               <i />
@@ -305,7 +403,7 @@ export default function Home() {
             </div>
             <div className="about-stamp">
               <span>EST.</span>
-                <strong>2011</strong>
+              <strong>2011</strong>
               <small>PUNE · INDIA</small>
             </div>
             <div className="about-image-caption">
@@ -318,8 +416,8 @@ export default function Home() {
               title="Your Partner for Modular OT & Cleanroom Engineering"
             />
             <p className="about-lead">
-              Airtec Solutions is a Pune-based manufacturer, supplier and turnkey solution
-              provider specializing in{" "}
+              Airtec Solutions is a Pune-based manufacturer, supplier and
+              turnkey solution provider specializing in{" "}
               <strong>
                 Modular Operation Theatres, Modular Cleanrooms, Clean Air
                 Systems, cleanroom equipment and associated HVAC and filtration
@@ -329,8 +427,8 @@ export default function Home() {
             <p>
               We provide complete project solutions from{" "}
               <strong>
-                concept and design to product manufacturing/sourcing, installation,
-                commissioning and validation support.
+                concept and design to product manufacturing/sourcing,
+                installation, commissioning and validation support.
               </strong>
             </p>
             <p>
@@ -376,40 +474,154 @@ export default function Home() {
           </div>
         </section>
         <SolutionsSlider />
-        <section className="about-technical-section section-pad" id="technical-capabilities"><div className="container"><div className="about-section-heading-row"><div><p className="eyebrow">TECHNICAL CAPABILITIES</p><h2>Built around <em>control.</em></h2></div><p>Our engineering scope brings the building envelope, air systems, filtration and project documentation together around each controlled environment.</p></div><div className="technical-capabilities-grid">{technicalCapabilities.map(([number, title, details]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{details}</p></div></article>)}</div></div></section>
-        <section className="about-why-section section-pad" id="why-airtec"><div className="container"><div className="about-section-heading-row"><div><p className="eyebrow">WHY AIRTEC</p><h2>Why Choose <em>Airtec Solutions?</em></h2></div><p>A complete engineering partner for controlled environments, from the first project brief to ongoing support.</p></div><div className="about-reasons-grid">{whyAirtec.map(([number, title, copy]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div></div></section>
-        <section className="homepage-products-section section-pad" id="products-highlighted">
+        <section
+          className="about-technical-section section-pad"
+          id="technical-capabilities"
+        >
+          <div className="container">
+            <div className="about-section-heading-row">
+              <div>
+                <p className="eyebrow">TECHNICAL CAPABILITIES</p>
+                <h2>
+                  Built around <em>control.</em>
+                </h2>
+              </div>
+              <p>
+                Our engineering scope brings the building envelope, air systems,
+                filtration and project documentation together around each
+                controlled environment.
+              </p>
+            </div>
+            <div className="technical-capabilities-grid">
+              {technicalCapabilities.map(([number, title, details]) => (
+                <article key={number}>
+                  <span>{number}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{details}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="about-why-section section-pad" id="why-airtec">
+          <div className="container">
+            <div className="about-section-heading-row">
+              <div>
+                <p className="eyebrow">WHY AIRTEC</p>
+                <h2>
+                  Why Choose <em>Airtec Solutions?</em>
+                </h2>
+              </div>
+              <p>
+                A complete engineering partner for controlled environments, from
+                the first project brief to ongoing support.
+              </p>
+            </div>
+            <div className="about-reasons-grid">
+              {whyAirtec.map(([number, title, copy]) => (
+                <article key={number}>
+                  <span>{number}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section
+          className="homepage-products-section section-pad"
+          id="products-highlighted"
+        >
           <div className="container">
             <div className="about-section-heading-row">
               <div>
                 <p className="eyebrow">PRODUCT CAPABILITIES</p>
-                <h2>Manufactured by <em>Airtec Solutions</em></h2>
+                <h2>
+                  Manufactured by <em>Airtec Solutions</em>
+                </h2>
               </div>
-              <p>Selected cleanroom equipment is manufactured in-house, while specialized products and materials are supplied and integrated according to project requirements.</p>
+              <p>
+                Selected cleanroom equipment is manufactured in-house, while
+                specialized products and materials are supplied and integrated
+                according to project requirements.
+              </p>
             </div>
             <div className="homepage-product-groups">
               <div className="homepage-product-group">
                 <h3>Manufactured by Airtec Solutions</h3>
                 <ol>
-                  {manufacturedProducts.map((product) => <li key={product}>{product}</li>)}
+                  {manufacturedProducts.map((product) => (
+                    <li key={product}>{product}</li>
+                  ))}
                 </ol>
               </div>
               <div className="homepage-product-group">
                 <h3>Products We Supply &amp; Integrate</h3>
                 <ol>
-                  {suppliedProducts.map((product) => <li key={product}>{product}</li>)}
+                  {suppliedProducts.map((product) => (
+                    <li key={product}>{product}</li>
+                  ))}
                 </ol>
               </div>
             </div>
           </div>
         </section>
-        <section className="projects-section featured-projects section-pad" id="projects">
+        <section
+          className="projects-section featured-projects section-pad"
+          id="projects"
+        >
           <div className="container">
-            <div className="featured-projects-heading"><div><p className="eyebrow">SELECTED WORK / 03</p><h2>Featured <em>Projects</em></h2></div><div><p>Controlled environments delivered for healthcare, pharmaceutical and medical device applications.</p><Link className="featured-projects-link" href="/#contact">View All Projects →</Link></div></div>
-            <div className="featured-projects-grid">{featuredProjects.map(([title, details, image]) => <article className="featured-project" key={title}><div className="featured-project-image"><Image src={image} alt={`${title} by Airtec Solutions`} fill sizes="(max-width: 700px) 100vw, 33vw" /></div><div className="featured-project-copy"><h3>{title}</h3><p>{details}</p><span>Airtec Solutions ↗</span></div></article>)}</div>
+            <div className="featured-projects-heading">
+              <div>
+                <p className="eyebrow">SELECTED WORK / 03</p>
+                <h2>
+                  Featured <em>Projects</em>
+                </h2>
+              </div>
+              <div>
+                <p>
+                  Controlled environments delivered for healthcare,
+                  pharmaceutical and medical device applications.
+                </p>
+                <Link className="featured-projects-link" href="/solutions">
+                  View All Projects →
+                </Link>
+              </div>
+            </div>
+            <div className="featured-projects-grid">
+              {featuredProjects.map(([title, details, image], index) => (
+                <Link
+                  className="featured-project"
+                  key={title}
+                  href={`/solutions/${featuredProjectSlugs[index]}`}
+                  aria-label={`View ${title}`}
+                >
+                  <div className="featured-project-image">
+                    <Image
+                      src={image}
+                      alt={`${title} by Airtec Solutions`}
+                      fill
+                      sizes="(max-width: 700px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="featured-project-copy">
+                    <h3>{title}</h3>
+                    <p>{details}</p>
+                    <span>Airtec Solutions ↗</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
-        <section className="legacy-solutions-section solutions-section solutions-premium section-pad" id="legacy-solutions">
+        <section
+          className="legacy-solutions-section solutions-section solutions-premium section-pad"
+          id="legacy-solutions"
+        >
           <div className="container">
             <Intro
               eyebrow="WHAT WE DO"
@@ -418,7 +630,10 @@ export default function Home() {
             />
             <div className="solution-grid">
               {solutions.map(([num, title, copy, image, cta], index) => (
-                <article className={`solution-card solution-card-${index + 1}`} key={title}>
+                <article
+                  className={`solution-card solution-card-${index + 1}`}
+                  key={title}
+                >
                   <div className="card-image">
                     <Image
                       src={image}
@@ -431,7 +646,11 @@ export default function Home() {
                     <span className="card-number">{num}</span>
                     <h3>{title}</h3>
                     <p>{copy}</p>
-                    <Link href={`/solutions/${["modular-operation-theater-manufacturer", "modular-clean-room-system-manufacturer", "hvac-hepa-filtration", "laminar-airflow-systems", "cleanroom-equipment", "cleanroom-panels-doors"][index]}`}>
+                    <Link
+                      className="solution-card-link"
+                      href={`/solutions/${solutionSlugs[index]}`}
+                      aria-label={`Explore ${title}`}
+                    >
                       {cta} <b>↗</b>
                     </Link>
                   </div>
@@ -441,19 +660,46 @@ export default function Home() {
           </div>
         </section>
         <TurnkeySlider />
-        <section className="trusted-clients-section section-pad" id="trusted-clients">
+        <section
+          className="trusted-clients-section section-pad"
+          id="trusted-clients"
+        >
           <div className="container">
             <div className="trusted-clients-heading">
               <div>
                 <p className="eyebrow">TRUSTED PARTNERS / 04</p>
-                <h2>Trusted by <em>Leading Organizations</em></h2>
+                <h2>
+                  Trusted by <em>Leading Organizations</em>
+                </h2>
               </div>
               <div>
-                <p>Building long-term relationships with organizations across healthcare, pharmaceutical, medical device, industrial, research and other controlled-environment sectors.</p>
-                <Link className="trusted-clients-link" href="/clients">View All Clients <b>→</b></Link>
+                <p>
+                  Building long-term relationships with organizations across
+                  healthcare, pharmaceutical, medical device, industrial,
+                  research and other controlled-environment sectors.
+                </p>
+                <Link className="trusted-clients-link" href="/clients">
+                  View All Clients <b>→</b>
+                </Link>
               </div>
             </div>
             <TrustedClientsSlider clients={trustedClients} />
+          </div>
+        </section>
+        <section className="homepage-360-section section-pad" aria-labelledby="homepage-360-title">
+          <div className="container homepage-360-grid">
+            <div className="homepage-360-visual" aria-hidden="true">
+              <div className="homepage-360-orbit homepage-360-orbit-one" />
+              <div className="homepage-360-orbit homepage-360-orbit-two" />
+              <div className="homepage-360-camera"><span /><i /></div>
+              <span className="homepage-360-index">360 / VIEW</span>
+            </div>
+            <div className="homepage-360-copy">
+              <p className="eyebrow eyebrow-light">STEP INSIDE THE SYSTEM</p>
+              <h2 id="homepage-360-title">See our Modular OT <em>in 360°.</em></h2>
+              <p>Explore the controlled environment, modular construction and clinical detailing through our interactive Google 360° view.</p>
+              <a className="button button-primary homepage-360-link" href={modularOt360Url} target="_blank" rel="noreferrer">Open 360° view <b>↗</b></a>
+            </div>
           </div>
         </section>
         <section className="legacy-process-section process-section section-pad">
@@ -479,7 +725,6 @@ export default function Home() {
               eyebrow="INDUSTRIES WE SERVE"
               title="Engineered for Critical Environments"
             />
-            <div className="industry-priority-grid">{industryGroups.map(([priority, title, copy, image]) => <article className={`industry-priority-card industry-priority-${priority.toLowerCase()}`} key={priority}><div className="industry-priority-image"><Image src={image} alt={`${title} controlled environment solutions`} fill sizes="(max-width: 700px) 100vw, 33vw" /></div><div className="industry-priority-copy"><span>{priority}</span><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
             <div className="industry-grid">
               {industries.map(([title, copy, image]) => (
                 <article className="industry-card" key={title}>
@@ -503,29 +748,66 @@ export default function Home() {
           </div>
         </section>
         {/* <section className="origin-cta-section section-pad"><div className="container"><p className="eyebrow eyebrow-light">AIRTEC SOLUTIONS / PAN INDIA</p><h2>Manufactured in Pune.<br /><em>Installed Across India.</em></h2><p>Planning a new OT or cleanroom? Share your requirement with our engineering team.</p><a className="button button-primary" href="/contact">Request a Technical &amp; Commercial Proposal <b>↗</b></a></div></section> */}
-      
-        <section className="origin-cta-section section-pad" aria-labelledby="turnkey-solutions-title">
+
+        <section className="homepage-360-section section-pad" aria-labelledby="homepage-360-title">
+          <div className="container homepage-360-grid">
+            <div className="homepage-360-visual" aria-hidden="true">
+              <div className="homepage-360-orbit homepage-360-orbit-one" />
+              <div className="homepage-360-orbit homepage-360-orbit-two" />
+              <div className="homepage-360-camera"><span /><i /></div>
+              <span className="homepage-360-index">360 / VIEW</span>
+            </div>
+            <div className="homepage-360-copy">
+              <p className="eyebrow eyebrow-light">STEP INSIDE THE SYSTEM</p>
+              <h2 id="homepage-360-title">See our Modular OT <em>in 360°.</em></h2>
+              <p>Explore the controlled environment, modular construction and clinical detailing through our interactive Google 360° view.</p>
+              <a className="button button-primary homepage-360-link" href={modularOt360Url} target="_blank" rel="noreferrer">Open 360° view <b>↗</b></a>
+            </div>
+          </div>
+        </section>
+        <section
+          className="origin-cta-section section-pad"
+          aria-labelledby="turnkey-solutions-title"
+        >
           <div className="container turnkey-closing-grid">
             <div className="turnkey-closing-copy">
-              <div className="turnkey-closing-index"><span>AIRTEC / TURNKEY</span><b>04</b></div>
-              <p className="eyebrow eyebrow-light">AIRTEC SOLUTIONS / TURNKEY</p>
+              <div className="turnkey-closing-index">
+                <span>AIRTEC / TURNKEY</span>
+                <b>04</b>
+              </div>
+              <p className="eyebrow eyebrow-light">
+                AIRTEC SOLUTIONS / TURNKEY
+              </p>
               <h2 id="turnkey-solutions-title">
                 Turnkey Solutions by <em>Airtec</em>
               </h2>
-              <p className="turnkey-closing-lead">Engineered environments, delivered as one considered system.</p>
+              <p className="turnkey-closing-lead">
+                Engineered environments, delivered as one considered system.
+              </p>
             </div>
-            <div className="turnkey-closing-solutions" aria-label="Airtec turnkey solutions">
-              <div className="turnkey-closing-solution">
+            <div
+              className="turnkey-closing-solutions"
+              aria-label="Airtec turnkey solutions"
+            >
+              <Link
+                className="turnkey-closing-solution"
+                href="/solutions/modular-clean-room-system-manufacturer"
+              >
                 <span>01</span>
                 <strong>Modular Clean Rooms</strong>
                 <b>↗</b>
+              </Link>
+              <div className="turnkey-closing-divider">
+                <i /> <span>&amp;</span> <i />
               </div>
-              <div className="turnkey-closing-divider"><i /> <span>&amp;</span> <i /></div>
-              <div className="turnkey-closing-solution">
+              <Link
+                className="turnkey-closing-solution"
+                href="/solutions/modular-operation-theater-manufacturer"
+              >
                 <span>02</span>
                 <strong>Modular Operation Theatres</strong>
                 <b>↗</b>
-              </div>
+              </Link>
             </div>
           </div>
         </section>

@@ -27,7 +27,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     </div></section>
     <section className="product-overview section-pad"><div className="container product-overview-grid"><div>
       <p className="eyebrow">DESIGNED AROUND YOUR REQUIREMENT</p><h2>Purposeful details. Reliable performance.</h2><p className="product-overview-lead">{product.intro}</p>
-      <Link className="button button-primary" href="/#contact">Request a product consultation <b>↗</b></Link>
+      <Link className="button button-primary" href="/contact">Request a product consultation <b>↗</b></Link>
     </div><aside className="product-quick-spec"><span>PRODUCT AT A GLANCE</span>{product.specification.map(([key, value]) => <div key={key}><b>{key}</b><p>{value}</p></div>)}</aside></div></section>
     {product.slug === "ot-control-panel" && (
       <section className="ot-control-panel-feature section-pad">

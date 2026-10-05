@@ -1,15 +1,16 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const solutionSlides = [
-  ["01", "Modular Operation Theatre", "Complete modular OT solutions designed for controlled, hygienic and efficient surgical environments.", "/solutions/1 (6).png", "Explore Modular OT"],
-  ["02", "Modular Cleanroom", "Custom-designed cleanroom systems for controlled environments across healthcare and critical industries.", "/solutions/1 (5).png", "Explore Cleanrooms"],
-  ["03", "Cleanroom Panels & Doors", "Engineered wall, ceiling, door and window systems for modular controlled environments.", "/solutions/1 (1).png", "View Panel Systems"],
-  ["04", "HVAC & HEPA Filtration", "Air handling, filtration and airflow solutions designed around required environmental conditions.", "/solutions/1 (4).png", "Explore HVAC & Filtration"],
-  ["05", "Laminar Airflow Systems", "Unidirectional airflow solutions for applications requiring controlled clean air.", "/solutions/1 (3).png", "Explore LAF"],
-  ["06", "Cleanroom Equipment", "Pass Boxes, Air Showers, Sampling Booths, Dispensing Booths and other clean-air equipment.", "/solutions/1 (2).png", "View Products"],
+  ["01", "Modular Operation Theatre", "Complete modular OT solutions designed for controlled, hygienic and efficient surgical environments.", "/solutions/1 (6).png", "Explore Modular OT", "/solutions/modular-operation-theater-manufacturer"],
+  ["02", "Modular Cleanroom", "Custom-designed cleanroom systems for controlled environments across healthcare and critical industries.", "/solutions/1 (5).png", "Explore Cleanrooms", "/solutions/modular-clean-room-system-manufacturer"],
+  ["03", "Cleanroom Panels & Doors", "Engineered wall, ceiling, door and window systems for modular controlled environments.", "/solutions/1 (1).png", "View Panel Systems", "/solutions/cleanroom-panels-doors"],
+  ["04", "HVAC & HEPA Filtration", "Air handling, filtration and airflow solutions designed around required environmental conditions.", "/solutions/1 (4).png", "Explore HVAC & Filtration", "/solutions/hvac-hepa-filtration"],
+  ["05", "Laminar Airflow Systems", "Unidirectional airflow solutions for applications requiring controlled clean air.", "/solutions/1 (3).png", "Explore LAF", "/solutions/laminar-airflow-systems"],
+  ["06", "Cleanroom Equipment", "Pass Boxes, Air Showers, Sampling Booths, Dispensing Booths and other clean-air equipment.", "/solutions/1 (2).png", "View Products", "/solutions/cleanroom-equipment"],
 ] as const;
 
 export default function SolutionsSlider() {
@@ -42,7 +43,7 @@ export default function SolutionsSlider() {
             <span className="solutions-slider-kicker">AIRTEC CAPABILITY</span>
             <h3>{slide[1]}</h3>
             <p>{slide[2]}</p>
-            <a className="solutions-slider-link" href="#contact">{slide[4]} <b>↗</b></a>
+            <Link className="solutions-slider-link" href={slide[5]}>{slide[4]} <b>↗</b></Link>
             <div className="solutions-slider-controls">
               <button type="button" onClick={() => move(-1)} aria-label="Previous solution">←</button>
               <div className="solutions-slider-progress"><span style={{ width: `${((active + 1) / solutionSlides.length) * 100}%` }} /></div>

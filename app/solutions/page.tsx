@@ -34,13 +34,26 @@ export default function SolutionsPage() {
         <section className="section-pad">
           <div className="container">
             <div className="solution-directory-intro">
-              <p className="eyebrow">OUR CAPABILITIES</p>
-              <h2>One partner for the complete environment.</h2>
-              <p>
-                Every Airtec solution can be planned as part of a coordinated
-                turnkey project, from consultation and design through
-                installation, commissioning and validation support.
-              </p>
+              <div className="solution-directory-intro-top">
+                <p className="eyebrow">OUR CAPABILITIES <span>/ 03</span></p>
+                <span className="solution-intro-mark" aria-hidden="true">AIRTEC / SYSTEMS</span>
+              </div>
+              <div className="solution-directory-intro-content">
+                <h2>One partner for the <em>complete environment.</em></h2>
+                <div className="solution-directory-intro-copy">
+                  <p>
+                    Every Airtec solution can be planned as part of a coordinated
+                    turnkey project, from consultation and design through
+                    installation, commissioning and validation support.
+                  </p>
+                  <Link className="text-link" href="/contact">Plan your project <b>↗</b></Link>
+                </div>
+              </div>
+              <div className="solution-intro-meta" aria-label="Airtec project delivery highlights">
+                <span><b>01</b> Consultation-led planning</span>
+                <span><b>02</b> Integrated manufacturing</span>
+                <span><b>03</b> Installation to validation</span>
+              </div>
             </div>
             <div className="solution-directory-grid">
               {orderedSolutions.map((solution) => (
