@@ -38,7 +38,7 @@ const companyItems = [
   ["About Us", "/about-us"],
   ["Clients", "/clients"],
   ["Industries", "/industries"],
-  ["products", "/products"],
+  ["Products", "/products"],
   ["Maintenance & Support", "/maintenance-and-support"],
   ["Contact", "/contact"],
 ] as const;
@@ -78,7 +78,8 @@ export default function Footer() {
           </div>
           <div className="footer-contact-details">
             <span><b>Address:</b> S.No. 687, Sitaram Heights, Adinath Nagar, Near Ashirwad Gas Agency, Bhosari, Pune - 411039, Maharashtra, India</span>
-            <span><b>Call:</b> <a href="tel:+918600321114">+91 8600321114</a> | <a href="tel:+918600321115">+91 8600321115</a></span>
+            <span><b>GST No.:</b> 27AASFA9262E1Z4</span>
+            <span><b>Call:</b>  <a href="tel:+918600321115">+91 8600321115</a> |  <a href="tel:+918600321114">+91 8600321114</a></span>
             <span><b>Email:</b> <a href="mailto:sales@airtecsolutions.in">sales@airtecsolutions.in</a> | <a href="mailto:accounts@airtecsolutions.in">accounts@airtecsolutions.in</a></span>
           </div>
         </div>

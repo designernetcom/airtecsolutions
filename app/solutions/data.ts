@@ -290,11 +290,11 @@ export const solutions: Solution[] = [
   {
     slug: "pressure-module-in-pune",
     number: "08",
-    title: "Positive Pressure Module in Pune",
+    title: "Pressure Module Manufacturer",
     shortTitle: "Pressure Module",
     description:
-      "Automatic positive and negative pressure modules designed to support clean, controlled environments in compact spaces and work zones.",
-    image: "/solutions/pressure-module/hero.png",
+      "Airtec Solutions is a Pressure Module Manufacturer in Pune supplying positive and negative pressure modules for hospitals, pharmaceutical cleanrooms, laboratories and controlled environments across Maharashtra.",
+    image: "/solutions/pressure-module/cleanroom-pressure-module.png",
     intro:
       "Airtec Solutions supplies pressure modules for cleanrooms and controlled work areas where positive pressure, filtered air and practical contamination control are essential to the process.",
     benefits: [

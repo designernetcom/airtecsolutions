@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return <><Header /><main className="products-directory">
     <section className="products-hero"><div className="container">
-      <p className="eyebrow eyebrow-light">AIRTEC PRODUCT RANGE / 15 PRODUCTS</p>
+      <p className="eyebrow eyebrow-light">AIRTEC PRODUCT RANGE / 16 PRODUCTS</p>
       <h1>Products engineered for <span>critical environments.</span></h1>
       <p>Explore the components and clean-air equipment that come together to create high-performing healthcare, pharmaceutical and industrial controlled spaces.</p>
     </div></section>
@@ -24,7 +24,7 @@ export default function ProductsPage() {
     </div></section>
     <section className="products-grid-section"><div className="container products-grid">
       {products.map((product) => <article className="product-card" key={product.slug}>
-        <Link href={`/products/${product.slug}`}>
+        <Link href={product.slug === "pressure-module-in-pune" ? "/solutions/pressure-module-in-pune" : `/products/${product.slug}`}>
           <div className="product-card-image"><Image src={product.image} alt={`${product.title} supplied or manufactured by Airtec Solutions`} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" /><span>{product.number}</span></div>
           <p>{product.category}</p><small className="product-status-badge">{product.status}</small><h2>{product.title}</h2><span className="product-card-copy">{product.description}</span><b>Explore product <i>↗</i></b>
         </Link>

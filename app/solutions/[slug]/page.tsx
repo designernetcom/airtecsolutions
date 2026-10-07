@@ -246,17 +246,57 @@ const workstationAdvantages = [
 ];
 
 const pressureModuleSpecifications = [
-  ["Brand", "Airtec Solutions"], ["Usage", "Cleanrooms"], ["Material", "GI powder coated"], ["Colour", "RAL 9002"], ["Features", "Long-lasting, reliable, high finish"], ["Automation grade", "Automatic"], ["Voltage", "230 V"], ["Country of origin", "Made in India"], ["Type", "Corrosion resistant"],
+  ["Brand", "Airtec Solutions"], ["Material", "GI powder coated"], ["Standard colour", "RAL 9002"], ["Filtration", "Pre-filter plus HEPA filter (99.97% efficiency)"], ["Automation grade", "Automatic or manual, as per requirement"], ["Voltage", "230V, 50Hz, single phase"], ["Airflow capacity", "Customisable per room size and air change requirement"], ["Country of origin", "Made in India"], ["Corrosion resistance", "Yes"],
 ];
 
-const pressureModuleComponents = ["Pre-filter", "Cooling coil", "Blower section", "HEPA filter chamber", "Condenser unit connection"];
+const pressureModuleSteps = [
+  ["Air Intake", "Room air is pulled in through a pre-filter fitted at the rear of the pressure module. The pre-filter traps dust particles before they travel further."],
+  ["Blower Stage", "A blower assembly pulls the air through the pressure module at a controlled speed."],
+  ["HEPA Filtration", "The air then passes through a HEPA filter chamber in the pressure module. Submicron particles are removed. The system releases ultra-clean filtered air back into the room."],
+  ["Pressure Regulation", "A positive pressure module pushes filtered air into the room at a pressure higher than the surrounding area, so untreated or contaminated air cannot enter. A negative pressure module does the opposite. The Negative Pressure Module extracts air from the room and expels it, keeping pressure lower than the surroundings so infectious or hazardous air does not leak outward. This is why negative pressure modules are common in isolation rooms and biosafety areas."],
+  ["Temperature Control", "Many units connect to a condenser or cooling coil to keep circulating air within a working range."],
+] as const;
+
+const pressureModuleComponents = ["Pre-filter", "Blower stage", "HEPA filtration", "Pressure regulation", "Temperature control"];
 
 const pressureModuleFeatures = [
-  ["Precision-engineered", "Designed to support effective contamination control in compact controlled environments."],
-  ["Durable construction", "GI powder-coated construction provides a dependable, corrosion-resistant finish."],
-  ["Reliable airflow", "Coordinated blower and HEPA filtration sections help deliver consistent filtered airflow."],
-  ["Competitive value", "A practical industrial solution for projects that need controlled air performance."],
+  ["Contamination Control", "HEPA-filtered air brings down airborne particle count significantly."],
+  ["Infection Prevention", "Directional airflow, positive or negative, limits cross-contamination between zones."],
+  ["Compact Footprint", "Fits into a wall or window opening, so you do not need a full ducted AHU system."],
+  ["Durable Build", "The GI powder-coated body resists corrosion and holds up over years of use."],
+  ["Consistent Airflow", "A balanced blower and filter design keeps pressure differentials stable."],
+  ["Customisable Capacity", "Airflow (CFM) and filtration grade are tailored to your room size and use case."],
 ];
+
+const pressureModuleComparison = [
+  ["Airflow direction", "Pushes filtered air into the room", "Extracts air out of the room"],
+  ["Pressure relative to surroundings", "Higher than the adjacent area", "Lower than the adjacent area"],
+  ["Primary purpose", "Keeps external contaminants out", "Contains internal contaminants"],
+  ["Typical applications", "Operation theatres, ICUs, pharma cleanrooms, sterile stores", "Isolation wards, infectious disease rooms, biosafety labs, quarantine zones"],
+  ["Contamination risk managed", "Airborne particles or pathogens entering the room", "Airborne particles or pathogens escaping the room"],
+  ["Filtration", "Pre-filter plus HEPA filter (99.97% efficiency)", "Pre-filter plus HEPA filter (99.97% efficiency)"],
+  ["Common industries", "Hospitals, pharmaceutical manufacturing, electronics cleanrooms", "Hospitals, infectious disease units, research labs, biosafety facilities"],
+  ["Room classification role", "Maintains a higher cleanliness class, such as ISO Class 7 or 8", "Maintains containment integrity for hazardous or infectious zones"],
+  ["Automation grade", "Automatic or manual", "Automatic or manual"],
+  ["Manufactured by", "Airtec Solutions, Pune, Maharashtra", "Airtec Solutions, Pune, Maharashtra"],
+] as const;
+
+const pressureModuleApplications = [
+  "Hospital operation theatres and ICUs",
+  "Isolation and quarantine wards",
+  "Pharmaceutical manufacturing cleanrooms",
+  "Diagnostic and research laboratories",
+  "Electronics and precision manufacturing cleanrooms",
+  "Biosafety cabinets and containment areas",
+];
+
+const pressureModuleFaqs = [
+  ["What is the difference between a positive pressure module and a negative pressure module?", "A positive pressure module pushes filtered air into a room to keep air and contaminants from entering. This helps maintain an environment, which is why it is often used in operation theatres and clean zones. A negative pressure module pulls air out of a room to prevent internal air from escaping, making it suitable for isolation rooms and areas where infectious diseases are managed."],
+  ["Which industries use pressure modules?", "Pressure modules are used in sectors where clean air and controlled airflow are essential, including hospitals, pharmaceutical manufacturing units, diagnostic labs, biosafety labs and cleanrooms for precision electronics. Any place that needs to control particles or prevent contamination relies on these systems."],
+  ["Can a pressure module be customised for a room size?", "Yes. We can adjust the airflow capacity in CFM, the filter type, the physical dimensions and the level of automation based on the room's air change rate (ACH) and how the space will be used."],
+  ["What filtration efficiency do Airtec Solutions pressure modules offer?", "Our pressure modules use HEPA filters rated at 99.97% efficiency. This means they can capture particles as small as 0.3 microns, supporting clean and safe air in controlled environments."],
+  ["Do you supply pressure modules across all of Maharashtra?", "Yes. As a manufacturer based in Pune, we install both positive and negative pressure modules throughout Maharashtra, including Mumbai, Pune, Nashik and Aurangabad. We also offer on-site installation and ongoing maintenance support."],
+] as const;
 
 const aluminiumCovingSpecifications = [
   ["Material", "Aluminium"], ["Usage / application", "Modular Cleanrooms, Modular Operation Theatres"], ["Coverage area", "1 piece = 10 / 12 RFT"], ["Grade standard", "Industrial"], ["Finishing type", "Anodized"], ["Country of origin", "Made in India"],
@@ -336,14 +376,19 @@ export async function generateMetadata({
   if (!solution) return {};
   const pageTitle = solution.slug === "operation-theater-manufacturer"
     ? "Operation Theater Manufacturer in Maharashtra | Modular OT Solutions"
+    : solution.slug === "pressure-module-in-pune"
+      ? "Pressure Module Manufacturer in Pune | Positive & Negative Pressure Modules"
     : `${solution.title} | Airtec Solutions`;
+  const pageDescription = solution.slug === "pressure-module-in-pune"
+    ? "Airtec Solutions is a Pressure Module Manufacturer in Pune supplying positive and negative pressure modules for hospitals, pharmaceutical cleanrooms, laboratories and controlled environments across Maharashtra."
+    : solution.description;
   return {
     title: pageTitle,
-    description: solution.description,
+    description: pageDescription,
     alternates: { canonical: `/solutions/${solution.slug}` },
     openGraph: {
       title: pageTitle,
-      description: solution.description,
+      description: pageDescription,
       type: "website",
     },
   };
@@ -383,6 +428,15 @@ export default async function SolutionPage({
     provider: { "@type": "Organization", name: "Airtec Solutions" },
     areaServed: "India",
   };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: pressureModuleFaqs.map(([question, answer]) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  };
   return (
     <>
       <Header />
@@ -391,6 +445,7 @@ export default async function SolutionPage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {isPressureModule && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
         <section className="solution-detail-hero">
           <Image
             src={solution.image}
@@ -415,7 +470,7 @@ export default async function SolutionPage({
             <p>{solution.description}</p>
           </div>
         </section>
-        <section className="solution-detail-body section-pad">
+        {!isPressureModule && <section className="solution-detail-body section-pad">
           <div className="container solution-detail-grid">
             <article>
               <p className="eyebrow">ENGINEERED AROUND YOUR PROCESS</p>
@@ -460,7 +515,7 @@ export default async function SolutionPage({
               <Link href="/about-us">About Airtec Solutions ↗</Link>
             </aside>
           </div>
-        </section>
+        </section>}
         {solution.slug === "hospital-cleanroom" && (
           <section className="hospital-cleanroom-feature section-pad">
             <div className="container">
@@ -770,48 +825,26 @@ export default async function SolutionPage({
             <section className="workstation-advantages section-pad"><div className="container"><div className="workstation-heading"><p className="eyebrow">WHY CHOOSE OUR LAMINAR WORKSTATIONS?</p><h2>Control that helps your process <em>move forward.</em></h2></div><div className="workstation-advantage-grid">{workstationAdvantages.map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
           </>
         )}
-        {isPressureModule && (
+        {isPressureModule && false && (
           <>
             <section className="pressure-module-intro section-pad"><div className="container pressure-module-intro-grid"><div><p className="eyebrow">PRESSURE MODULE / PUNE</p><h2>Positive pressure for <em>cleaner, safer zones.</em></h2><p>Airtec Solutions offers Positive Pressure Modules and Negative Pressure Modules designed to create a clean, controlled environment within compact enclosures and focused work zones.</p></div><div className="pressure-module-flow" aria-hidden="true"><span>AMBIENT AIR</span><i /><i /><i /><b>FILTERED AIR<br />TO ROOM</b></div></div></section>
-            <section className="pressure-module-visual-section section-pad">
-              <div className="container">
-                <div className="pressure-module-visual-heading">
-                  <div><p className="eyebrow">SYSTEM IN DETAIL</p><h2>A pressure module designed around <em>control.</em></h2></div>
-                  <p>From HEPA-filtered supply air to pressure monitoring and return or exhaust paths, each detail supports a dependable controlled environment.</p>
-                </div>
-                <figure className="pressure-module-visual-figure">
-                  <Image src="/solutions/pressure-module/unit.png" alt="Ceiling-mounted pressure module above an operating table in an operation theatre" fill sizes="(max-width: 800px) 100vw, 1200px" />
-                  <figcaption><span>08 / PPM</span> Ceiling-mounted pressure module in an operation theatre.</figcaption>
-                </figure>
-              </div>
-            </section>
             <section className="pressure-module-profile section-pad"><div className="container pressure-module-profile-grid"><div className="pressure-module-profile-copy"><p className="eyebrow eyebrow-light">CONTROLLED AIR ENGINEERING</p><h2>A compact system with a <em>clear purpose.</em></h2><p>The working principle of a positive pressure module is closely aligned with laminar airflow. Ambient air enters through a rear-mounted pre-filter, is drawn through the blower assembly, then moves through the HEPA filter chamber for high-efficiency filtration.</p><p>The module circulates conditioned air inside the room while maintaining positive pressure to help reduce the entry of contaminated air. Pre-filter, cooling coil, blower section and HEPA filter work together, with a condenser-unit connection available for typical cooling of the surrounding air.</p><Link className="button button-light" href="/contact">Discuss your pressure module <b>↗</b></Link></div><div className="pressure-module-spec-card"><div><span>SYSTEM SPECIFICATION</span><b>08 / PPM</b></div><h3>Technical profile</h3><dl>{pressureModuleSpecifications.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl></div></div></section>
             <section className="pressure-module-components section-pad"><div className="container"><div className="pressure-module-heading"><p className="eyebrow">AIRFLOW PATH</p><h2>Built around a disciplined <em>filtration sequence.</em></h2></div><div className="pressure-module-component-list">{pressureModuleComponents.map((component, index) => <span key={component}><b>{String(index + 1).padStart(2, "0")}</b>{component}<i>→</i></span>)}</div></div></section>
             <section className="pressure-module-features section-pad"><div className="container"><p className="eyebrow eyebrow-light">KEY FEATURES</p><div className="pressure-module-feature-grid">{pressureModuleFeatures.map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
           </>
         )}
         {isPressureModule && (
-          <section className="pressure-module-gallery section-pad">
-            <div className="container">
-              <div className="pressure-module-gallery-heading">
-                <div>
-                  <p className="eyebrow">PRESSURE MODULE CONFIGURATIONS</p>
-                  <h2>Designed to fit your <em>controlled environment.</em></h2>
-                </div>
-                <p>Explore ceiling-mounted and wall-integrated module views, with the final configuration tailored to your room and airflow requirements.</p>
-              </div>
-              <div className="pressure-module-configuration-grid">
-                <figure>
-                  <Image src="/solutions/pressure-module/ceiling-unit.png" alt="Close-up of a suspended ceiling pressure module with a perforated front panel" width={1536} height={1024} sizes="(max-width: 800px) 100vw, 50vw" />
-                  <figcaption><span>01 / CEILING MODULE</span> Suspended module within an operation theatre.</figcaption>
-                </figure>
-                <figure>
-                  <Image src="/solutions/pressure-module/wall-unit.png" alt="Flush wall-integrated pressure module grille beside an operation theatre window" width={1536} height={1024} sizes="(max-width: 800px) 100vw, 50vw" />
-                  <figcaption><span>02 / WALL MODULE</span> Flush grille integrated into the room wall.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </section>
+          <>
+            <section className="pressure-module-intro section-pad"><div className="container pressure-module-intro-grid"><div><p className="eyebrow">PRESSURE MODULE MANUFACTURER IN MAHARASHTRA</p><h2>Control contamination. <em>Balance pressure.</em></h2><p>When searching for a reliable Pressure Module Manufacturer in Maharashtra, you probably need to consider how to control contamination and maintain air pressure balance. Getting the airflow direction correct can decide the fate of compliance for your hospital operation theatre, pharmaceutical cleanroom, or industrial sterile area.</p><p>Airtec Solutions is a Positive Pressure Module Manufacturer as well as a Negative Pressure Module Manufacturer and is based in Pune. Our compact air handling units are engineered to maintain the right pressure differentials across the cleanroom zones.</p><p>We manufacture pressure modules for hospitals, pharmaceutical industries, diagnostic laboratories, and industrial cleanrooms all over Maharashtra that require precision air supply without investing in a complete air handling system.</p><Link className="button button-primary" href="/contact">Get a Custom Pressure Module Quote <b>&#8599;</b></Link></div><div className="pressure-module-flow" aria-hidden="true"><span>AMBIENT AIR</span><i /><i /><i /><b>FILTERED AIR<br />TO ROOM</b></div></div></section>
+            <section className="pressure-module-visual-section section-pad"><div className="container"><div className="pressure-module-visual-heading"><div><p className="eyebrow">HEPA PRESSURE MODULE</p><h2>Compact filtration for <em>controlled environments.</em></h2></div><p>A close-up view of a pressure module unit designed for cleanroom, operation theatre, laboratory and other controlled-air applications.</p></div><figure className="pressure-module-visual-figure"><Image src="/solutions/pressure-module/pressure-module-unit.png" alt="White HEPA pressure module unit inside a modern cleanroom" fill sizes="(max-width: 800px) 100vw, 100vw" /><figcaption><span>01</span> HEPA pressure module unit for controlled clean-air environments.</figcaption></figure></div></section>
+            <section className="pressure-module-components section-pad"><div className="container"><div className="pressure-module-heading"><p className="eyebrow">SYSTEM WORKING PRINCIPLE</p><h2>What Is a Pressure Module? <em>How Does It Work?</em></h2><p className="pressure-module-section-lead">A pressure module is a compact, self-contained air filtration unit that is fitted into a wall or window opening. It regulates air pressure and filters airborne particles in a cleanroom, operation theatre, isolation ward, or any controlled workspace.</p><p className="pressure-module-section-lead">The pressure module operates on the basic principle of a laminar airflow unit, but it is smaller and mounted on a wall.</p></div><div className="pressure-module-component-list">{pressureModuleSteps.map(([title, copy], index) => <article key={title}><b>{String(index + 1).padStart(2, "0")}</b><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+            <section className="pressure-module-comparison section-pad"><div className="container"><p className="eyebrow">CONFIGURATION GUIDE</p><h2>Positive Pressure Module <em>vs Negative Pressure Module</em></h2><p className="pressure-module-section-lead">Choosing between a Positive Pressure Module and a Negative Pressure Module really comes down to one question: does your facility need to keep contaminants out of a room, or keep them contained inside it?</p><p className="pressure-module-section-lead">Here is a quick side-by-side comparison to help you decide.</p><div className="pressure-module-table-wrap"><table><caption className="sr-only">Comparison of positive and negative pressure modules</caption><thead><tr><th scope="col">Parameter</th><th scope="col">Positive Pressure Module</th><th scope="col">Negative Pressure Module</th></tr></thead><tbody>{pressureModuleComparison.map(([parameter, positive, negative]) => <tr key={parameter}><th scope="row">{parameter}</th><td>{positive}</td><td>{negative}</td></tr>)}</tbody></table></div></div></section>
+            <section className="pressure-module-specifications section-pad"><div className="container"><div className="pressure-module-heading"><p className="eyebrow">TECHNICAL PROFILE</p><h3>Technical Specifications</h3></div><div className="pressure-module-table-wrap pressure-module-spec-table-wrap"><table><caption className="sr-only">Pressure module technical specifications</caption><thead><tr><th scope="col">Parameter</th><th scope="col">Details</th></tr></thead><tbody>{pressureModuleSpecifications.map(([parameter, detail]) => <tr key={parameter}><th scope="row">{parameter}</th><td>{detail}</td></tr>)}</tbody></table></div></div></section>
+            <section className="pressure-module-features section-pad"><div className="container"><p className="eyebrow eyebrow-light">WHY AIRTEC SOLUTIONS</p><h3>Benefits and Features</h3><div className="pressure-module-feature-grid">{pressureModuleFeatures.map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+            <section className="pressure-module-applications section-pad"><div className="container"><p className="eyebrow">APPLICATIONS</p><h3>Where Pressure Modules Are Used</h3><p className="pressure-module-section-lead">Our pressure modules are used across:</p><div className="pressure-module-application-grid">{pressureModuleApplications.map((application, index) => <span key={application}><b>{String(index + 1).padStart(2, "0")}</b>{application}</span>)}</div></div></section>
+            <section className="pressure-module-faq section-pad"><div className="container"><p className="eyebrow">FAQ</p><h2>Frequently Asked Questions</h2><div className="cleanroom-faq-list">{pressureModuleFaqs.map(([question, answer], index) => <details key={question}><summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<b>+</b></summary><p>{answer}</p></details>)}</div></div></section>
+            <section className="pressure-module-final-cta section-pad"><div className="container pressure-module-final-cta-grid"><div><p className="eyebrow eyebrow-light">PRESSURE MODULE MANUFACTURER IN PUNE</p><h2>Get a Custom <em>Pressure Module Quote.</em></h2><p>Planning a hospital, pharmaceutical, or industrial cleanroom project in Maharashtra?</p><p>Airtec Solutions, a trusted Positive Pressure Module manufacturer and Negative Pressure Module manufacturer based in Pune, can help you configure the right unit for your facility.</p><p>Share your room size, air change requirement, and pressure specification, and our team will get back to you with a customised quote. We also supply related cleanroom equipment such as Modular Operation Theatres, HEPA Filters, and Pass Boxes for complete facility setups.</p></div><div className="pressure-module-final-cta-actions"><Link className="button button-light" href="/contact">Request a Quote <b>&#8599;</b></Link><Link className="button button-ghost button-ghost-light" href="/contact">Contact Us <b>&#8599;</b></Link><div><Link href="/solutions/modular-operation-theater-manufacturer">Modular Operation Theatres</Link><Link href="/products/hepa-filter">HEPA Filters</Link><Link href="/products/pass-box">Pass Boxes</Link><Link href="/about-us">About Airtec Solutions</Link></div></div></div></section>
+          </>
         )}
         {isAluminiumCoving && (
           <>
