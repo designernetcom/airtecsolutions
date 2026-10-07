@@ -294,7 +294,7 @@ export const solutions: Solution[] = [
     shortTitle: "Pressure Module",
     description:
       "Automatic positive and negative pressure modules designed to support clean, controlled environments in compact spaces and work zones.",
-    image: "/solutions/pressure-module/hero-pressure-module.png",
+    image: "/solutions/pressure-module/hero.png",
     intro:
       "Airtec Solutions supplies pressure modules for cleanrooms and controlled work areas where positive pressure, filtered air and practical contamination control are essential to the process.",
     benefits: [

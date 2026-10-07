@@ -15,7 +15,6 @@ const photos = {
   industry: "/solutions/1 (5).png",
   lab: "/solutions/1 (6).png",
 };
-const modularOt360Url = "https://www.google.com/local/place/fid/0x3bd90faf16ee7f13:0x6b5bd731510e08dc/photosphere?iu=https://lh5.googleusercontent.com/p/AF1QipPLHpCDlLLY6yOjl3zKQ_6l8O4Bhg4nEpXybqP-%3Dw160-h106-k-no-pi-0-ya35.538036-ro-0-fo100&ik=CAoSLEFGMVFpcFBMSHBDRGxMTFk2eU9qbDN6S1FfNmw4TzRCaGc0bkVwWHlicVAt";
 const solutions = [
   [
     "01",
@@ -686,22 +685,6 @@ export default function Home() {
             <TrustedClientsSlider clients={trustedClients} />
           </div>
         </section>
-        <section className="homepage-360-section section-pad" aria-labelledby="homepage-360-title">
-          <div className="container homepage-360-grid">
-            <div className="homepage-360-visual" aria-hidden="true">
-              <div className="homepage-360-orbit homepage-360-orbit-one" />
-              <div className="homepage-360-orbit homepage-360-orbit-two" />
-              <div className="homepage-360-camera"><span /><i /></div>
-              <span className="homepage-360-index">360 / VIEW</span>
-            </div>
-            <div className="homepage-360-copy">
-              <p className="eyebrow eyebrow-light">STEP INSIDE THE SYSTEM</p>
-              <h2 id="homepage-360-title">See our Modular OT <em>in 360°.</em></h2>
-              <p>Explore the controlled environment, modular construction and clinical detailing through our interactive Google 360° view.</p>
-              <a className="button button-primary homepage-360-link" href={modularOt360Url} target="_blank" rel="noreferrer">Open 360° view <b>↗</b></a>
-            </div>
-          </div>
-        </section>
         <section className="legacy-process-section process-section section-pad">
           <div className="container">
             <Intro
@@ -749,22 +732,6 @@ export default function Home() {
         </section>
         {/* <section className="origin-cta-section section-pad"><div className="container"><p className="eyebrow eyebrow-light">AIRTEC SOLUTIONS / PAN INDIA</p><h2>Manufactured in Pune.<br /><em>Installed Across India.</em></h2><p>Planning a new OT or cleanroom? Share your requirement with our engineering team.</p><a className="button button-primary" href="/contact">Request a Technical &amp; Commercial Proposal <b>↗</b></a></div></section> */}
 
-        <section className="homepage-360-section section-pad" aria-labelledby="homepage-360-title">
-          <div className="container homepage-360-grid">
-            <div className="homepage-360-visual" aria-hidden="true">
-              <div className="homepage-360-orbit homepage-360-orbit-one" />
-              <div className="homepage-360-orbit homepage-360-orbit-two" />
-              <div className="homepage-360-camera"><span /><i /></div>
-              <span className="homepage-360-index">360 / VIEW</span>
-            </div>
-            <div className="homepage-360-copy">
-              <p className="eyebrow eyebrow-light">STEP INSIDE THE SYSTEM</p>
-              <h2 id="homepage-360-title">See our Modular OT <em>in 360°.</em></h2>
-              <p>Explore the controlled environment, modular construction and clinical detailing through our interactive Google 360° view.</p>
-              <a className="button button-primary homepage-360-link" href={modularOt360Url} target="_blank" rel="noreferrer">Open 360° view <b>↗</b></a>
-            </div>
-          </div>
-        </section>
         <section
           className="origin-cta-section section-pad"
           aria-labelledby="turnkey-solutions-title"

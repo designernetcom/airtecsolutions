@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getSolution, solutions, solutionStaticSlugs } from "../data";
 
+const modularOt360Url = "https://www.google.com/local/place/fid/0x3bd90faf16ee7f13:0x6b5bd731510e08dc/photosphere?iu=https://lh5.googleusercontent.com/p/AF1QipPLHpCDlLLY6yOjl3zKQ_6l8O4Bhg4nEpXybqP-%3Dw160-h106-k-no-pi-0-ya35.538036-ro-0-fo100&ik=CAoSLEFGMVFpcFBMSHBDRGxMTFk2eU9qbDN6S1FfNmw4TzRCaGc0bkVwWHlicVAt";
+
 const modularOtApplications = [
   "General Surgery OT", "Orthopaedic OT", "Cardiac OT", "Ophthalmic OT", "ENT OT",
   "Gynecology OT", "Neurosurgery OT", "IVF / Procedure Areas", "Hybrid / Specialized OT applications", "Recovery and associated controlled areas",
@@ -529,6 +531,22 @@ export default async function SolutionPage({
                 </div>
               </div>
             </section>
+            <section className="modular-ot-360-section section-pad" aria-labelledby="modular-ot-360-title">
+              <div className="container modular-ot-360-grid">
+                <div className="modular-ot-360-visual" aria-hidden="true">
+                  <div className="modular-ot-360-orbit modular-ot-360-orbit-one" />
+                  <div className="modular-ot-360-orbit modular-ot-360-orbit-two" />
+                  <div className="modular-ot-360-camera"><span /><i /></div>
+                  <span className="modular-ot-360-index">360 / VIEW</span>
+                </div>
+                <div className="modular-ot-360-copy">
+                  <p className="eyebrow eyebrow-light">STEP INSIDE THE SYSTEM</p>
+                  <h2 id="modular-ot-360-title">Explore the Modular Operation Theatre from every angle through our <em>interactive 360° virtual view</em></h2>
+                  <p>Explore the controlled environment, modular construction and clinical detailing through our interactive Google 360° view.</p>
+                  <a className="button button-primary modular-ot-360-link" href={modularOt360Url} target="_blank" rel="noreferrer">Open 360° view <b>↗</b></a>
+                </div>
+              </div>
+            </section>
             <section className="modular-ot-profile section-pad">
               <div className="container modular-ot-profile-grid">
                 <div className="modular-ot-profile-copy">
@@ -762,8 +780,8 @@ export default async function SolutionPage({
                   <p>From HEPA-filtered supply air to pressure monitoring and return or exhaust paths, each detail supports a dependable controlled environment.</p>
                 </div>
                 <figure className="pressure-module-visual-figure">
-                  <Image src="/solutions/pressure-module/pressure-module-detail.png" alt="Positive pressure module with HEPA filtered supply, pressure monitoring and return exhaust details" fill sizes="(max-width: 800px) 100vw, 1200px" />
-                  <figcaption><span>08 / PPM</span> Positive pressure module configuration and airflow control overview.</figcaption>
+                  <Image src="/solutions/pressure-module/unit.png" alt="Ceiling-mounted pressure module above an operating table in an operation theatre" fill sizes="(max-width: 800px) 100vw, 1200px" />
+                  <figcaption><span>08 / PPM</span> Ceiling-mounted pressure module in an operation theatre.</figcaption>
                 </figure>
               </div>
             </section>
@@ -771,6 +789,29 @@ export default async function SolutionPage({
             <section className="pressure-module-components section-pad"><div className="container"><div className="pressure-module-heading"><p className="eyebrow">AIRFLOW PATH</p><h2>Built around a disciplined <em>filtration sequence.</em></h2></div><div className="pressure-module-component-list">{pressureModuleComponents.map((component, index) => <span key={component}><b>{String(index + 1).padStart(2, "0")}</b>{component}<i>→</i></span>)}</div></div></section>
             <section className="pressure-module-features section-pad"><div className="container"><p className="eyebrow eyebrow-light">KEY FEATURES</p><div className="pressure-module-feature-grid">{pressureModuleFeatures.map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
           </>
+        )}
+        {isPressureModule && (
+          <section className="pressure-module-gallery section-pad">
+            <div className="container">
+              <div className="pressure-module-gallery-heading">
+                <div>
+                  <p className="eyebrow">PRESSURE MODULE CONFIGURATIONS</p>
+                  <h2>Designed to fit your <em>controlled environment.</em></h2>
+                </div>
+                <p>Explore ceiling-mounted and wall-integrated module views, with the final configuration tailored to your room and airflow requirements.</p>
+              </div>
+              <div className="pressure-module-configuration-grid">
+                <figure>
+                  <Image src="/solutions/pressure-module/ceiling-unit.png" alt="Close-up of a suspended ceiling pressure module with a perforated front panel" width={1536} height={1024} sizes="(max-width: 800px) 100vw, 50vw" />
+                  <figcaption><span>01 / CEILING MODULE</span> Suspended module within an operation theatre.</figcaption>
+                </figure>
+                <figure>
+                  <Image src="/solutions/pressure-module/wall-unit.png" alt="Flush wall-integrated pressure module grille beside an operation theatre window" width={1536} height={1024} sizes="(max-width: 800px) 100vw, 50vw" />
+                  <figcaption><span>02 / WALL MODULE</span> Flush grille integrated into the room wall.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
         )}
         {isAluminiumCoving && (
           <>
