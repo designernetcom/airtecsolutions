@@ -7,6 +7,7 @@ import BrandLogo from "./BrandLogo";
 const solutionPages = [
   ["Modular Operation Theatre", "/solutions/modular-operation-theater-manufacturer"],
   ["Modular Cleanroom", "/modular-clean-room"],
+  ["Modular Clean Room Manufacturer", "/modular-clean-room-manufacturer"],
   ["Hospital Cleanroom", "/solutions/hospital-cleanroom"],
   ["Pharmaceutical Cleanroom", "/solutions/pharmaceutical-cleanroom"],
   ["Medical Device Cleanroom", "/solutions/medical-device-cleanroom"],
@@ -15,6 +16,8 @@ const solutionPages = [
 
 const operationPages = [
   ["Modular Operation Theater", "modular-operation-theater-manufacturer"],
+  ["Operation Theater Manufacturer in Pune", "operation-theater-manufacturer-in-pune"],
+  ["Sterilized Operation Theater", "sterilized-operation-theater-manufacturer"],
   ["Softwall Operation Theater", "softwall-operation-theater"],
   ["Semi Modular Operation Theater", "semi-modular-operation-theater-manufacturer"],
   ["Prefabricated Operation Theater", "prefabricated-operation-theater"],
@@ -33,6 +36,13 @@ const productPages = [
   ["Cleanroom Flooring", "cleanroom-flooring"], ["Sampling Booth", "sampling-booth"],
   ["Dispensing Booth", "dispensing-booth"], ["OT Control Panel", "ot-control-panel"],
   ["OT Lights", "ot-lights"], ["Pressure Module", "pressure-module-in-pune"],
+  ["Hatch Box", "hatch-box-manufacturer"],
+  ["Clean Pass Box", "clean-pass-box-manufacturer"],
+  ["Pass Box Manufacturer", "pass-box-manufacturer"],
+  ["Static Pass Box Manufacturer", "static-pass-box-manufacturer-in-maharashtra"],
+  ["Dynamic Pass Box", "dynamic-pass-box"],
+  ["Laminar Air Flow Manufacturer", "laminar-air-flow-manufacturer-in-pune"],
+  ["Laminar Air Flow Cabinet Manufacturer", "laminar-air-flow-cabinet-manufacturer-in-maharashtra"],
 ] as const;
 
 type NavItem = {
@@ -94,7 +104,7 @@ export default function Header() {
                   {item.children.map(([label, slug]) => (
                     <div className="dropdown-item-wrapper" key={label}>
                       <Link
-                        href={item.label === "Solutions" ? slug : item.label === "Operation Theaters" ? `/solutions/${slug}` : slug === "pressure-module-in-pune" ? "/solutions/pressure-module-in-pune" : slug === "pressure-module-manufacturer" ? "/pressure-module-manufacturer" : slug === "modular-clean-room" ? "/modular-clean-room" : `/products/${slug}`}
+                        href={item.label === "Solutions" ? slug : item.label === "Operation Theaters" ? slug === "operation-theater-manufacturer-in-pune" ? "/operation-theater-manufacturer-in-pune" : `/solutions/${slug}` : slug === "pressure-module-in-pune" ? "/solutions/pressure-module-in-pune" : slug === "pressure-module-manufacturer" ? "/pressure-module-manufacturer" : slug === "modular-clean-room" ? "/modular-clean-room" : slug === "hatch-box-manufacturer" ? "/hatch-box-manufacturer" : slug === "clean-pass-box-manufacturer" ? "/clean-pass-box-manufacturer" : slug === "pass-box-manufacturer" ? "/pass-box-manufacturer" : slug === "static-pass-box-manufacturer-in-maharashtra" ? "/static-pass-box-manufacturer-in-maharashtra" : slug === "dynamic-pass-box" ? "/dynamic-pass-box" : slug === "laminar-air-flow-manufacturer-in-pune" ? "/laminar-air-flow-manufacturer-in-pune" : slug === "laminar-air-flow-cabinet-manufacturer-in-maharashtra" ? "/laminar-air-flow-cabinet-manufacturer-in-maharashtra" : `/products/${slug}`}
                         onClick={() => { setOpen(false); setMobileDropdown(null); }}
                       >
                         {label}<b>↗</b>
